@@ -1,0 +1,175 @@
+body {
+  margin: 0;
+  padding: 0;
+  position: relative;
+  background-color: #efefef;
+}
+
+header {
+  width: 100%;
+  background-color: black;
+  color: white;
+  height: 70px;
+  display: flex;
+  align-items: center;
+}
+
+footer {
+  width: 100%;
+  background-color: black;
+  color: white;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  bottom: 0;
+}
+
+/*========HOME==========*/
+
+.logo {
+  font-size: 22px;
+  font-weight: bold;
+  margin: 0 32px;
+}
+
+.links a {
+  color: white;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: bold;
+  margin-right: 10px;
+}
+
+.links a:hover {
+  color: orange;
+}
+
+.container {
+  margin: 32px 0 80px 32px;
+}
+
+.title p {
+  font-size: 18px;
+  font-weight: bold;
+  color: orange;
+}
+
+.description p {
+  font-size: 18px;
+  font-weight: bold;
+  color: black;
+}
+
+.social-networks p {
+  text-align: center;
+}
+
+.icons-networks {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.icons-networks img {
+  max-width: 200px;
+}
+
+/*========STOCK==========*/
+
+.container table {
+  border-collapse: collapse;
+  border: 2px solid black;
+}
+
+.container table tbody th {
+  padding: 10px;
+}
+
+.container table tbody tr {
+  padding: 10px;
+  border: 1px solid black;
+}
+
+.container table tbody th {
+  border: 2px solid black;
+}
+
+.container table tr td {
+  border: 2px solid black;
+  text-align: center;
+  padding: 5px;
+  font-weight: bold;
+}
+
+.container table tr td img {
+  max-width: 65px;
+  padding: 2px;
+  border-radius: 5px;
+}
+
+/*========FORM==========*/
+.container form {
+  max-width: 400px;
+  border: 2px solid black;
+  box-sizing: border-box;
+}
+
+.container form div {
+  width: 100%;
+  margin: 10px 10px;
+}
+
+.container form div label {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.container form div input {
+  width: 90%;
+  margin-top: 10px;
+  height: 20px;
+}
+
+.container form div.form-add {
+  width: 100%;
+  margin: 20px 10px;
+}
+
+.container form div.form-add button {
+  width: 92%;
+  height: 30px;
+  background-color: black;
+  color: white;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.container form div.form-add button:hover {
+  opacity: 0.5;
+}
+
+/*========EMPLOYEES==========*/
+.container ol li {
+  padding: 5px;
+  font-weight: bold;
+}
+
+/*========SOLD==========*/
+.container div select {
+  width: 92%;
+  margin-top: 10px;
+  height: 25px;
+}
+
+/*========HISTORY SOLD==========*/
+.container .history-vendas ol ul {
+  border: 1px solid black;
+  width: 300px;
+}
+
+
+
