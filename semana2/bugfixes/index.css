@@ -11,6 +11,8 @@
     padding: 0;
 
     font-family: 'Roboto', sans-serif;
+
+    box-sizing: border-box;
 }
 
 h2 {
@@ -29,20 +31,8 @@ button:focus {
     color: white;
 }
 
-button:active {
-    color: white;
-}
-
-img {
-    width: 100px;
-}
-
 div>p:first-child {
     display: inline;
-}
-
-div img {
-    background: black;
 }
 
 .botao-amarelo {
@@ -52,6 +42,8 @@ div img {
     border-radius: 5px;
     font-size: 20px;
     color: white;
+    border: none;
+    margin-bottom: 50px;
 }
 
 .botao-amarelo:hover {
@@ -76,8 +68,12 @@ div img {
 
 #container-de-descricao {
     background-color: #2274a5;
+    height: 50vh;
     color: white;
-    padding-top: 32px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
 #container-de-descricao>ol {
@@ -86,13 +82,20 @@ div img {
 
 #container-para-comprar {
     background-color: #e7eb90;
+    height: 42vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+
 }
 
 #container-para-comprar>p {
     color: #c44f00;
-    padding: 100px 0;
-    font-size: 60px;
+    font-size: 40px;
+    margin-top: 50px;
 }
+
 
 
 /**
@@ -113,7 +116,7 @@ table {
 }
 
 td img {
-    width: 30px;
+    width: 50px;
 }
 
 td button {
@@ -122,10 +125,13 @@ td button {
     height: 30px;
     border-radius: 5px;
     color: black;
+    font-weight: bold;
+    border: none;
 }
 
 td button:hover {
     background-color: #f3ce2a;
+
 }
 
 .container-do-search {
@@ -138,6 +144,9 @@ td button:hover {
     border-bottom: 2px solid black;
 }
 
+#container-button {
+    margin: 100px 45%;
+}
 
 #back-button {
     background-color: white;
@@ -147,10 +156,12 @@ td button:hover {
     border-radius: 5px;
     font-size: 10px;
     color: black;
+    text-align: center;
 }
 
 #back-button:hover {
-    background-color: #635a3d
+    background-color: #635a3d;
+    color: white;
 }
 
 #back-button:active {
