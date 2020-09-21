@@ -25,6 +25,7 @@ h2 {
 input {
     height: 20px;
     width: 500px;
+    outline: none;
 }
 
 button:focus {
@@ -44,6 +45,7 @@ div>p:first-child {
     color: white;
     border: none;
     margin-bottom: 50px;
+    outline: none;
 }
 
 .botao-amarelo:hover {
@@ -127,11 +129,11 @@ td button {
     color: black;
     font-weight: bold;
     border: none;
+    outline: none;
 }
 
 td button:hover {
     background-color: #f3ce2a;
-
 }
 
 .container-do-search {
@@ -157,6 +159,7 @@ td button:hover {
     font-size: 10px;
     color: black;
     text-align: center;
+    outline: none;
 }
 
 #back-button:hover {
