@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" type="image/x-icon" href="https://dev-to.s3.us-east-2.amazonaws.com/favicon.ico" />
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <title>DEV Community</title>
+
+  <link rel="stylesheet" href="/styles.css">
+</head>
+
+<body>
+  <header>
+    <div class="logo">
+      <img
+        src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOEAAADhCAMAAAAJbSJIAAAAflBMVEUAAAD////9/f3z8/P6+vpjY2PS0tLX19dubm7g4ODq6upXV1fNzc28vLybm5t8fHyQkJAuLi7l5eXExMTw8PC4uLiYmJjp6elycnKlpaUmJiY1NTXb29uEhIRKSkq6urpeXl5BQUGrq6tPT08eHh47OzsXFxcLCwuLi4srKyucwFtGAAAGkUlEQVR4nO3d63qiMBAGYAIUxEO1gGCVttbWtnv/N7iIygRIILGPZLI7378VkLwLgSQS6rB/PY7pAtw9JLQ/JLQ/JLQ/JLQ/JLQ/JLQ/JLQ/JLQ/JLQ/JLQ/JGQsTrLNBGc2WRL/Wrj4cHDnY/ErYbgzDVDILrxd+Gy68Ip5vlX4Y7rkyvm5TWjLETyl5yjKhaHpUmsluEFow0UG8kdfuDBdZs2stYXY74PtvOoKI9Ml1k6kKUxMF1g7C+ZqCF22Ml1g7bxoCiemC6ydiY7Q9d0H0wXWzkNZag2hb6HQJ+F/JfQ9z0Kh5/mqQtdaoeggktCekJCE+ENCEuIPCUmIPyQkIf6QkIT4Q0IS4g8JSYg/JCQh/pCQhPhDQhLiDwlJiD8kJCH+kJCE+HMH4eaxlWy5lzzg//HSXrfKS7XwO4NPRBuvYAef4woTwaZ+kXWRM9nEpMuUDu4J7dfubt5hadxXnDsIF8ztpNzaW7fW27iCFauVg/MKz/Vy0USkJSxtf7MJYYVsblweAzGwFj6AQfAA/Rss3eAQnoz8c/Bz2Wq1cOtdV2HTr/ZevvN6of+ERdgg7mTnKAidsEawWXsv73AI+2dijSosd1Rvv+lZ6yrMQJG19/IDy/on040rdJm3vay1VBDO6qpaf1QnAWF/mUYWwnVPRfg9rYVe+5aXQjXsL85dhbAldxCPbWF3R3XF4g7UvrkT5Wp4VyFLzk2OdcoZ2WNLyKKs1aS5tGmcRmVrNWtWPVV0RGF9n1qmUKCoLeyZ0XiUHqkAlrwbFC7rz3YxlGirLuRqm9tc4MOtcqA4Iwmd1/alT024llwx973NHSNC7u79oyGEuyY78J8/wucvsm3HFtbN6MuVQU34BGdjY/YqNPlE3Q4zwvrid7kqqgnLHtR1Nb71uYX62dtzskHIVUSuB8H1Onp7TjYIH4QV8aDYc7JB+McTVcQCzt3BFyBgF8KtncGtfSu5/tgp5O4L9ddNJPcQO4V7wUWFq4bDc8sRCIOH+gVPnZ68w7fP6htDDGfucHHMC/m9i1pgXEW8dLy+YNNOxxilECIUcj2oSwPtRbnnZIeQ60FdFnPjiKLT2jqhA0MZl/EKqIZpZ5DRSiE3KlK1st/h2jMfLo0NQu6aVA23ctVQ5a1jFgh3rYpYD08xd6jnZImQ60Gl340hxsGeExIhtwexkGvC7B3nA/71ZoeQ5W+LSxLxG4y4ZuhjYxxxKVwdn3Dw/Wg76EEFfDVUe3WcDUKuO5huuQHGXAVoh5D7MXjPDUsO95ysEXJDGRlXDdWeC7FCyPWg5tDV8BWabNYIYXjUh0Oo+BJOO4RwakJU36M6mjD7jfBVJFToOY0qhE9X+kLH6xBZ2vcglAkh/CS/uUGYdIWq76gcS8j1y483CF+6QtV3VI4j/OR+kE+dG4TQ671u5aq+Kvauwp/t0ymzA1eNrh0CECZfT61su18atYVDP/2OIuS+F0rG9i1h37MYkHVbqPyq2NGfp7mOcKo8T8OlvfrgT7+mhPUh1BXumhWRsd6n9UwK64aIprB1v1AaZTMh5Ao20xS+Nx5HVW3QjC1k829YLZevJvw1gr/W6Lw3fUQha/7mLj9NxUJ4ZLbs3QvuJ6aF5ebppL2e7L9C/IvS8Tp+wTyVcdK7CkUJupd36Z9mkPxmdrz8oYPiqAG8h/A5jpoJk/VS+Hjd6yGIRJE+QbJMiiJRGkO8qxBZSEhC/CEhCfGHhCTEHxKSEH9ISEL8ISEJ8YeEJMQfEpIQf0hIQvwhIQnxh4QkxB8SkhB/SEhC/CEhCfGHhCTEHxL+f0LliRxostQTpoMvgEOXQ6onVJ/JgSVzTeF04H2o6HKcagpzxfnFaPKYawhZKYwjjckcCPIZxaVQhBEKXT/N5VMFUOYQ5anwEMqE3jSKbLphLKNoKj5J5cK4CIff5Iclk7CIdYXlaRqGmrNWjGUZhpHsQiMWnk/TIgwPirP9jebzEIaF9CSVC08HMQiCldbsKgM5rspS9hxCibAixhUxWGeTGdZMsnVQAWMpUC48XWxOxPk8wJxT8UpgeY5qCs8tt7isi9W3oE1ZurIOxrIWW5+w6kJN86iojHgTFkWUTyUdp35hdaKeDmOJLK+qKFOWLDofQDmwR1gRS2Met+eK4kkc56WvF9gnZO7ZmKZTrCnLVvl6gL3Cs7FEIo4/4BsSVvPMfcxxB3zDwisTZ1QKryS0OiS0PyS0PyS0PyS0PyS0PyS0P/++8C8PptVucGuuyQAAAABJRU5ErkJggg=="
+        alt="Logo DEV Community">
+    </div>
+    <div class="search">
+      <input type="text" placeholder="search">
+    </div>
+    <div class="button-icons">
+      <button>WRITE A POST</button>
+      <span>
+        <img src="https://img.icons8.com/dotty/32/000000/filled-sent.png" />
+      </span>
+      <span>
+        <img class="bell" src="https://img.icons8.com/carbon-copy/100/000000/bell.png" />
+      </span>
+      <span>
+        <img src="https://img.icons8.com/carbon-copy/100/000000/circled-menu--v1.png"/>
+      </span>
+    </div>
+  </header>
+
+  <div class="container">
+    <div class="tags">
+      <div class="header-tags">
+        <p><u>design your experience</u></p>
+      </div>
+      <ul>
+        <li>#javascript</li>
+        <li>#webdev</li>
+        <li>#beginners</li>
+        <li>#discuss</li>
+        <li>#carrer</li>
+        <li>#react</li>
+        <li>#tutorial</li>
+        <li>#productivity</li>
+        <li>#python</li>
+        <li>#css</li>
+        <li>#node</li>
+        <li>#devops</li>
+      </ul>
+      <div class="footer">
+        View all-time top tags
+      </div>
+    </div>
+    <div class="post">
+      <div class="header-menu">
+        <div class="links">
+          <a href="#" class="button-feed">FEED</a><span class="div-menu">|</span>
+          <a href="#">WEEK</a>
+          <a href="#">MONTH</a>
+          <a href="#">YEAR</a>
+          <a href="#">INFINITY</a><span class="div-menu">|</span>
+          <a href="#" class="button-latest">LATEST</a>
+        </div>
+      </div>
+      <div class="image">
+        <img src="/assets/imagem.jpeg" alt="Imagem explicativa">
+      </div>
+      <div class="content">
+        <h2>The Interview Study Guide</h2>
+        <h2>For Software Engineers</h2>
+      </div>
+      <div class="details">
+        <div class="avatar">
+          <img src="/assets/avatar.png" alt="imagem avatar">
+        </div>
+        <div class="more-details">
+          <p>SeattleDataGuy - Sep 15 <span>(6 hours ago)</span></p>
+          <p>#carrer #beginners #sql #python</p>
+        </div>
+      </div>
+      <div class="post-footer">
+        <div class="icons">
+          <div class="icon-heart">
+            <img src="https://img.icons8.com/fluent/10/000000/hearts.png"/>
+            <span>131</span>
+          </div>
+          <div class="thoughts">
+            <img src="https://img.icons8.com/ios/18/000000/thinking-bubble.png"/>
+            <span>1</span>
+          </div>
+        </div>
+        <div class="read-button">
+          <span>11 min read</span>
+          <button>SAVE</button>
+        </div>
+      </div>
+    </div>
+    <div class="socials">
+      <div class="header-socials">
+        Join DEV
+      </div>
+      <div class="button">
+        <div>
+          <button>Sign in With Twiter</button>
+        </div>
+        <div>
+          <button>Sign in With GitHub</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</body>
+
+</html>
