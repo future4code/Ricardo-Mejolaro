@@ -89,8 +89,9 @@
         }
         
         header .button:hover,
-        article div button {
-            opacity: 0.9;
+        article div button:hover,
+        #button:hover {
+            opacity: 0.7;
         }
         /*Conteúdos principais*/
 
@@ -252,6 +253,10 @@
             padding-left: 6rem;
             text-decoration: none;
             font-size: 1.6rem;
+        }
+
+        section .column-one a:hover {
+            text-decoration: underline;
         }
 
         .rewards .column-one .white-color {
