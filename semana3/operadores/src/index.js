@@ -48,7 +48,7 @@
 //3.c
 //console.log(listaDeTarefas)
 //3.d
-//let indiceTarefaRealizada = prompt('Informe o indice da tarefa já realizada! Ex: 0 ou 1 ou 2: ')
+//let indiceTarefaRealizada = Number(prompt('Informe o indice da tarefa já realizada! Ex: 0 ou 1 ou 2: '))
 //3.e
 //listaDeTarefas.splice(indiceTarefaRealizada, 1)
 //3.f
