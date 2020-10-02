@@ -10,15 +10,15 @@
  * 
  * 
  */
-
-console.log("Bem vindo ao jogo de Blackjack!")
-let usuarioPontos = 0
+function blackjack() {
+   let usuarioPontos = 0
 let computadorPontos = 0
 let cartasUsuario = []
 let cartasComputador = []
 let cartasUsuarioAtuais
 let cartasComputadorAtuais
 
+alert("Bem vindo ao jogo de Blackjack!")
 if (confirm("Quer iniciar uma nova rodada?")) {
    /*Cartas usuário e desafio 8 */
    while (cartasUsuario.length < 2 || cartasUsuario[0] && cartasUsuario[2] == 11) {
@@ -53,7 +53,8 @@ if (confirm("Quer iniciar uma nova rodada?")) {
 
          if (usuarioPontos > 21) {
             alert(`
-            Suas cartas são:  ${cartasUsuario.join(" ")}. Sua pontuação é: ${usuarioPontos}\n
+            Suas cartas são:  ${cartasUsuario.join(" ")}.\n
+            Sua pontuação é: ${usuarioPontos}.\n
             As cartas do computador são ${cartasComputador.join(" ")}.\n
             A pontuação do computador é: ${computadorPontos}\n
             "O computador ganhou!"
@@ -72,12 +73,14 @@ if (confirm("Quer iniciar uma nova rodada?")) {
          if (computadorPontos > 21 || usuarioPontos > computadorPontos) {
             alert(`
                Suas cartas são:  ${cartasUsuario.join(" ")}. Sua pontuação é: ${usuarioPontos}\n
-               As cartas do computador são ${cartasComputador.join(" ")}. A pontuação do computador é: ${computadorPontos}\n
+               As cartas do computador são ${cartasComputador.join(" ")}.\n
+               A pontuação do computador é: ${computadorPontos}\n
                "O usuário ganhou!"
             `)
          } else if (usuarioPontos < computadorPontos) {
             alert(`
-               Suas cartas são:  ${cartasUsuario.join(" ")}. Sua pontuação é: ${usuarioPontos}\n
+               Suas cartas são:  ${cartasUsuario.join(" ")}.\n
+               Sua pontuação é: ${usuarioPontos}.\n
                As cartas do computador são ${cartasComputador.join(" ")}.\n
                A pontuação do computador é: ${computadorPontos}\n
                "O computador ganhou!"
@@ -96,4 +99,6 @@ if (confirm("Quer iniciar uma nova rodada?")) {
 } else {
    console.log("O jogo acabou!")
 }
+}
+
 
