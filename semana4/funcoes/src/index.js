@@ -32,7 +32,7 @@
 //     const soma = numero1 + numero2
 //     return soma
 // }
-    
+
 // const resultado1 = somaDoisNumeros(5, 6)
 // const resultado2 = somaDoisNumeros(10, 20)
 
@@ -205,3 +205,71 @@ const array = [10, 23, 45, 78, 90, 52, 35, 67, 84, 22]
 //   return `Existem ${quantity} números pares em sua lista!`
 // }
 // console.log(checkParityInList(array))
+
+/*===============================Desafios=====================================*/
+//DESAFIO 1:
+//1.1
+// const printEverything = item => {
+//   console.log(item)
+// }
+
+//1.2
+/*Descomentar a função printEverything para funcionamento correto da atual */
+// const addTwoNumbers = (numberOne, numberTwo) => {
+//   let resultado = numberOne + numberTwo
+//   return printEverything(resultado)
+// }
+// addTwoNumbers(999, 1052)
+
+//DESAFIO 2:
+/*Array para todos os exercícios do Desafio 2 não comentar*/
+const numbers = [0, 8, 23, 16, 10, 15, 41, 12, 13]
+
+//2.A
+// const doubleEvenNumbers = list => {
+//   let evenNumberArray = []
+//   for (const number of list) {
+//     if(number % 2 === 0) {
+//       evenNumberArray.push(number * 2)
+//     }
+//   }
+
+//   return evenNumberArray;
+// }
+// console.log(doubleEvenNumbers(numbers))
+
+//2.B
+// const higherNumber = numbers => {
+//   let higher = 0;
+//   for (const number of numbers) {
+//     if (number > higher) {
+//       higher = number
+//     }
+//   }
+//   return higher;
+// }
+// console.log(higherNumber(numbers))
+
+//2.C
+// const highestNumberIndex = numbers => {
+//   let highestIndex = 0;
+//   let number = 0
+//   for (let i = 0; i < numbers.length; i++) {
+//     if (number <= numbers[i]) {
+//       number = numbers[i]
+//       highestIndex = i
+//     }
+//   }
+//   return highestIndex;
+// }
+// console.log(highestNumberIndex(numbers))
+
+//2.D
+// const invertedArray = list => {
+//   let newArray = []
+//   for (let i = list.length - 1; i >= 0 ; i--) {
+//     newArray.push(list[i])
+//   }
+//   return newArray
+// }
+// console.log(invertedArray(numbers))
