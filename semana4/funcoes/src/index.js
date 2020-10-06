@@ -115,24 +115,24 @@ multiplyParNumbers().*/
 // whoAmI()
 
 //4.B
-function personInformation(name, age, city, student) {
-  let studentCheck
-  let cityCheck
-  if (student) {
-    studentCheck = "sou"
-  } else {
-    student = "não sou"
-  }
+// function personInformation(name, age, city, student) {
+//   let studentCheck
+//   let cityCheck
+//   if (student) {
+//     studentCheck = "sou"
+//   } else {
+//     student = "não sou"
+//   }
 
-  if (city === "São Paulo") {
-    cityCheck = "Rua Guarapari 190"
-  } else {
-    cityCheck = city
-  }
+//   if (city === "São Paulo") {
+//     cityCheck = "Rua Guarapari 190"
+//   } else {
+//     cityCheck = city
+//   }
 
-  return `Eu sou ${name}, tenho ${age} anos, moro em ${cityCheck} e ${studentCheck} estudante`
-}
-console.log(personInformation("Goli", 23, "São Paulo", true))
+//   return `Eu sou ${name}, tenho ${age} anos, moro em ${cityCheck} e ${studentCheck} estudante`
+// }
+// console.log(personInformation("Goli", 23, "São Paulo", true))
 
 //EXERCÍCIO 5:
 //5.A
