@@ -106,21 +106,55 @@ números pares não esta definida e o i é eternamente multiplicado por 2*/
 // triangleType(3, 1, 1);
 
 //EXERCÍCIO 5:
-function checksTwoNumbers(numberOne, numberTwo) {
-  const bigger = numberOne > numberTwo ? numberOne : numberTwo;
-  const difference = Math.abs(numberOne - numberTwo);
-  let divisible = `não é`
+// function checksTwoNumbers(numberOne, numberTwo) {
+//   const bigger = numberOne > numberTwo ? numberOne : numberTwo;
+//   const difference = Math.abs(numberOne - numberTwo);
+//   let divisible = `não é`
 
-  if (numberOne % numberTwo === 0) {
-    divisible = `é`
-  }
+//   if (numberOne % numberTwo === 0) {
+//     divisible = `é`
+//   }
 
-  console.log(`
-    O maior é: ${bigger}\n 
-    ${numberOne} ${divisible} divisível por ${numberTwo}\n
-    A diferença entre eles é: ${difference}
-  `)
-}
-checksTwoNumbers(15, 30);
+//   console.log(`
+//     O maior é: ${bigger}\n 
+//     ${numberOne} ${divisible} divisível por ${numberTwo}\n
+//     A diferença entre eles é: ${difference}
+//   `)
+// }
+// checksTwoNumbers(15, 30);
 
 
+/*===================================Exercícios de Funções======================================*/
+//EXERCÍCIO 1:
+
+// const array = [10, 0, 45, 9, -1, 6, 73, 8, 2, 10];
+
+// function secondBiggerAndSmaller(array) {
+//   let max = Math.max(...array);
+//   let min = Math.min(...array);
+//   let secondBigger = 0;
+//   let secondSmaller = max;
+
+//   for (const num of array) {
+//     if (num < max && num > secondBigger) {
+//       secondBigger = num;
+//     }
+
+//     if (num > min && num < secondSmaller) {
+//       secondSmaller = num;
+//     }
+
+//   }  
+
+//   return console.log(`
+//     O segundo menor número da lista é: ${secondSmaller}\n
+//     O segundo maior número da lista é: ${secondBigger}
+//   `)
+// }
+// secondBiggerAndSmaller(array);
+
+//EXERCÍCIO 2:
+// const salutation = () => {
+//   console.log("Hello Future4");
+// }
+// salutation();
