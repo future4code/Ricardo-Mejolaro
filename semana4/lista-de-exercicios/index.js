@@ -205,16 +205,150 @@ peso e etc.
 // console.log(printInfMovie(favoriteMovie));
 
 //EXERCÍCIO 4:
-const person = {
-  name: "Ricardo Mejolaro",
-  age: 32,
-  email: "ricardo.mejolaro@gmail.com",
-  address: "Rua pixinguinha, 127"
-}
+// const person = {
+//   name: "Ricardo Mejolaro",
+//   age: 32,
+//   email: "ricardo.mejolaro@gmail.com",
+//   address: "Rua pixinguinha, 127"
+// }
 
-function anonymizePerson(person) {
-  const newPerson = {...person, name: "ANÔNIMO"}
+// function anonymizePerson(person) {
+//   const newPerson = {...person, name: "ANÔNIMO"}
 
-  return newPerson;
-}
-console.log(anonymizePerson(person));
+//   return newPerson;
+// }
+// console.log(anonymizePerson(person));
+
+
+/*===============================Exercícios de Funções de array==================================*/
+
+//EXERCÍCIO 1:
+/*Atenção o array people serve para os exercícios 1.A e 1.B*/
+// const people = [
+// 	{ nome: "Pedro", idade: 20 },
+// 	{ nome: "João", idade: 10 },
+// 	{ nome: "Paula", idade: 12 },
+// 	{ nome: "Artur", idade: 89 } 
+// ];
+
+//1.A
+// function older(people) {
+//   const olderPeople = people.filter((person) => person.idade >= 20);
+
+//   return olderPeople
+// }
+// console.log(older(people));
+
+//1.B
+// function young(people) {
+//   const youngPeople = people.filter((person) => person.idade < 20);
+
+//   return youngPeople
+// }
+// console.log(young(people));
+
+//EXERCÍCIO 2:
+
+//2.A
+/*Atenção o array serve para os exercícios 2.A, 2.B e 2.C */
+// const array = [1, 2, 3, 4, 5, 6];
+
+// function doubleNumber(numbers) {
+//   const newArray = numbers.map((numero) => {
+//     return numero * 2;
+//   });
+
+//   return newArray;
+// }
+// console.log(doubleNumber(array));
+
+//2.B
+// function tripleNumber(numbers) {
+//   const newArray = numbers.map((numero) => {
+//     return String(numero * 3);
+//   });
+
+//   return newArray;
+// }
+// console.log(tripleNumber(array));
+
+//2.C
+// function evenOrOdd(numbers) {
+//   const newArray = numbers.map((numero) => {
+//     return `${numero} é ${numero % 2 === 0 ? "par" : "ímpar"}`;
+//   });
+
+//   return newArray;
+// }
+// console.log(evenOrOdd(array));
+
+//EXERCÍCIO 3:
+/*Atenção o array serve para os exercícios 3.A e 3.B */
+// const pessoas = [
+// 	{ nome: "Paula", idade: 12, altura: 1.8},
+// 	{ nome: "João", idade: 20, altura: 1.3},
+// 	{ nome: "Pedro", idade: 15, altura: 1.9},
+// 	{ nome: "Luciano", idade: 22, altura: 1.8},
+// 	{ nome: "Artur", idade: 10, altura: 1.2},
+// 	{ nome: "Soter", idade: 70, altura: 1.9}
+// ];
+
+//3.A
+// function havePermission(people) {
+//   const aproved = people.filter((person) => {
+//     return person.altura >= 1.5 && person.idade > 14 && person.idade < 60;
+//   })
+
+//   return aproved;
+// }
+// console.log(havePermission(pessoas));
+
+//3.B
+// function withoutPermission(people) {
+//   const disapproved = people.filter((person) => {
+//     return !(person.altura >= 1.5 && person.idade > 14 && person.idade < 60);
+//   })
+
+//   return disapproved;
+// }
+// console.log(withoutPermission(pessoas));
+
+//EXERCÍCIO 4:
+// const consultas = [
+//   { nome: "João", genero: "masculino", cancelada: true, dataDaConsulta: "01/10/2019" },
+//   { nome: "Pedro", genero: "masculino", cancelada: false, dataDaConsulta: "02/10/2019" },
+//   { nome: "Paula", genero: "feminino", cancelada: true, dataDaConsulta: "03/11/2019" },
+//   { nome: "Márcia", genero: "feminino", cancelada: false, dataDaConsulta: "04/11/2019" }
+// ];
+
+// function sendEmail(consultations) {
+//   const emails = consultations.map((client) => {
+//     if (client.cancelada) {
+//       return (`Olá, ${client.genero === "masculino" ? "Sr." : "Sra."} ${client.nome}. Infelizmente, sua consulta marcada para o dia ${client.dataDaConsulta} foi cancelada. Se quiser, pode entrar em contato conosco para remarcá-la.`);
+
+//     } else {
+//       return (`Olá, ${client.genero === "masculino" ? "Sr." : "Sra."} ${client.nome}. Estamos enviando esta mensagem para ${client.genero === "masculino" ? "lembrá-lo" : "lembrá-la"} da sua consulta no dia ${client.dataDaConsulta}. Por favor, acuse o recebimento deste e-mail.`);
+//     }
+//   });
+
+//   return emails;
+// }
+// console.log(sendEmail(consultas));
+
+//EXERCÍCIO 5:
+// const contas = [
+// 	{ cliente: "João", saldoTotal: 1000, compras: [100, 200, 300] },
+// 	{ cliente: "Paula", saldoTotal: 7500, compras: [200, 1040] },
+// 	{ cliente: "Pedro", saldoTotal: 10000, compras: [5140, 6100, 100, 2000] },
+// 	{ cliente: "Luciano", saldoTotal: 100, compras: [100, 200, 1700] },
+// 	{ cliente: "Artur", saldoTotal: 1800, compras: [200, 300] },
+// 	{ cliente: "Soter", saldoTotal: 1200, compras: [] }
+// ];
+// console.log(contas);
+
+// function updateTotalBalance(accounts) {
+//   accounts.forEach(client => {
+//     client.saldoTotal -= client.compras.reduce((total, value) => total + value) || 0;
+//   });
+// }
+// updateTotalBalance(contas);
