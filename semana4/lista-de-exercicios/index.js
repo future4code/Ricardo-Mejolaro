@@ -46,4 +46,81 @@ numero2 recebe 1590, pois, é maior que 283.
 Impressões do console são: -10 e 1590.
 */
 
+/*==========================Exercícios de Lógica de Programação===============================*/
+
+//EXERCÍCIO 1:
+/*Uma forma de iterar um array é utilizando o, for, por exemplo: */
+// const array = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+
+// for (let i = 0; i < array.length; i++) {
+//     console.log(array[i]);
+// }
+
+/*Outra forma de iterar um array é utilizando o, ForEach(), por exemplo: */
+// const array = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+// array.forEach((numero) => {
+//     console.log(numero);
+// })
+
+/*Mais uma forma de iterar um array é utilizando o, map(), por exemplo: */
+// const array = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+// const newArray = array.map((numero) => {
+//     //Retorna os números do array em dobro
+//     return numero * 2;
+// })
+// console.log(newArray);
+
+//EXERCÍCIO 2:
+//2.A: false
+//2.B: false
+//2.C: true
+//2.D: true
+//2.E: true
+
+//EXERCÍCIO 3:
+/*O código escrito pelo nobre colega resulta em um looping infinito, primeiro que a quantidade de
+números pares não esta definida e o i é eternamente multiplicado por 2*/
+
+/*Meu código: */
+// function firstEvenNumbers(quantity) {
+//   let i = 0
+//   while(i < quantity) {
+//     console.log(i * 2)
+//     i++
+//   }
+// }
+// firstEvenNumbers(5);
+
+//EXERCÍCIO 4:
+// function triangleType(sideOne, sideTwo, sideThree) {
+//   if (sideOne !== sideTwo && sideTwo !== sideThree && sideOne !== sideThree) {
+//     console.log(`O triângulo com as medidas: ${sideOne}, ${sideTwo} e ${sideThree} é: Escaleno`);
+
+//   } else if ((sideOne === sideTwo && (sideThree !== sideOne)) || (sideTwo === sideThree && (sideThree !== sideOne)) || (sideOne === sideThree &&  (sideThree !== sideTwo))) {
+//     console.log(`O triângulo com as medidas: ${sideOne}, ${sideTwo} e ${sideThree} é: Isósceles`);
+
+//   } else {
+//     console.log(`O triângulo com as medidas: ${sideOne}, ${sideTwo} e ${sideThree} é: Equilátero`);
+//   }
+// }
+// triangleType(3, 1, 1);
+
+//EXERCÍCIO 5:
+function checksTwoNumbers(numberOne, numberTwo) {
+  const bigger = numberOne > numberTwo ? numberOne : numberTwo;
+  const difference = Math.abs(numberOne - numberTwo);
+  let divisible = `não é`
+
+  if (numberOne % numberTwo === 0) {
+    divisible = `é`
+  }
+
+  console.log(`
+    O maior é: ${bigger}\n 
+    ${numberOne} ${divisible} divisível por ${numberTwo}\n
+    A diferença entre eles é: ${difference}
+  `)
+}
+checksTwoNumbers(15, 30);
+
 
