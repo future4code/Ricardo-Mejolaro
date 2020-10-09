@@ -158,3 +158,63 @@ números pares não esta definida e o i é eternamente multiplicado por 2*/
 //   console.log("Hello Future4");
 // }
 // salutation();
+
+/*===================================Exercícios de Objetos======================================*/
+//EXERCÍCIO 1:
+/*Arrays são listas de dados que podem armazernar diversos tipos de elementos, como: numbers, 
+strings, booleans, objetos e etc. 
+
+Objetos são conjuntos de informações que são compostas por chave e valor, o que podem ser definidas
+de acordo com o que, o objeto se refere no mundo real. Ex: Uma pessoa pode ter: nome, idade, altura,
+peso e etc.
+*/
+
+//EXERCÍCIO 2:
+// function createRectangle(side1, side2) {
+//   const perimeter = (side1 + side2) * 2;
+//   const area = side1 * side2;
+
+//   rectangle = {
+//     width: side1,
+//     height: side2,
+//     perimeter,
+//     area
+//   }
+
+//   return rectangle;
+// }
+// console.log(createRectangle(10, 20));
+
+//EXERCÍCIO 3:
+// const favoriteMovie = {
+//   title: "Homem de Ferro 3",
+//   year: 2013,
+//   director: "Shane Black",
+//   cast: [ "Robert Downey Jr.", "Gwyneth Paltrow"]
+// }
+
+// function printInfMovie(movie) {
+//   const stars = movie.cast.join(", ")
+
+//   return `
+//     Venha assistir ao filme ${movie.title},
+//     de ${movie.year}, dirigido por ${movie.director} 
+//     e estrelado por ${stars}.
+//     `
+// }
+// console.log(printInfMovie(favoriteMovie));
+
+//EXERCÍCIO 4:
+const person = {
+  name: "Ricardo Mejolaro",
+  age: 32,
+  email: "ricardo.mejolaro@gmail.com",
+  address: "Rua pixinguinha, 127"
+}
+
+function anonymizePerson(person) {
+  const newPerson = {...person, name: "ANÔNIMO"}
+
+  return newPerson;
+}
+console.log(anonymizePerson(person));
