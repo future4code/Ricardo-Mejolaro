@@ -1,8 +1,10 @@
 let arrDespesas = []
+imprimirDespesas(arrDespesas)
 imprimirExtrato()
 
+
 // PRIMEIRO
-function imprimirDespesas(despesas){
+function imprimirDespesas(despesas) {
     let divDespesas = document.getElementById('despesas')
     divDespesas.innerHTML = '<p><u>Despesas Detalhadas</u></p>'
 
@@ -13,12 +15,15 @@ function imprimirDespesas(despesas){
                 <span>Valor: ${despesa.valor} | Tipo: ${despesa.tipo}</span> | Descrição: ${despesa.descricao}\n
             </div>
         `
+
     })
+
 }
 
 
+
 // SEGUNDO 
-function imprimirExtrato(){
+function imprimirExtrato() {
     let divExtrato = document.getElementById('extrato')
     let gastoTotal = 0
     let gastoAlimentacao = 0
@@ -49,16 +54,17 @@ function limparFiltros() {
     document.getElementById('valorFiltroMax').value = ""
 
     imprimirDespesas(arrDespesas)
+
 }
 
 
 
-function adicionarDespesa(){
+function adicionarDespesa() {
     let valorCdt = document.getElementById('valorCadastro')
     let tipoCtd = document.getElementById('tipoCadastro')
     let descricaoCtd = document.getElementById('descricaoCadastro')
 
-    if(validarValor(valorCdt) && validarTipo(tipoCtd) && validarDescricao(descricaoCtd)){
+    if (validarValor(valorCdt) && validarTipo(tipoCtd) && validarDescricao(descricaoCtd)) {
         let novaDespesa = {
             valor: Number(valorCdt.value),
             tipo: tipoCtd.value,
@@ -66,11 +72,9 @@ function adicionarDespesa(){
         }
 
         arrDespesas.push(novaDespesa)
-
         valorCdt.value = ""
         tipoCtd.value = ""
         descricaoCtd.value = ""
-
 
         limparFiltros()
         imprimirDespesas(arrDespesas)
@@ -83,10 +87,11 @@ function adicionarDespesa(){
 
 
 // TERCEIRO
-function filtrarDespesas(){
+function filtrarDespesas() {
     let tipoFiltro = document.getElementById('tipoFiltro').value
     let valorMin = Number(document.getElementById('valorFiltroMin').value)
     let valorMax = Number(document.getElementById('valorFiltroMax').value)
+
 
     if (tipoFiltro === "" || valorMin === 0 || valorMax === 0) {
         alert("Todos os campos de filtro devem ser preenchidos!")
@@ -105,7 +110,7 @@ function filtrarDespesas(){
                 return true
             }
         })
-    
+
         imprimirDespesas(despesasFiltradas)
     }
 
@@ -117,23 +122,27 @@ function filtrarDespesas(){
 
 // NÃO SE PREOCUPEM EM ENTENDER ESSAS FUNÇÕES
 
-function validarValor(valor){
-    if(valor.value.length > 0 && parseInt(valor.value) > 0){
+function validarValor(valor) {
+    if (valor.value.length > 0 && parseInt(valor.value) > 0) {
         return true
     }
     return false
 }
 
-function validarTipo(tipo){
-    if(tipo.value !== ""){
+function validarTipo(tipo) {
+    if (tipo.value !== "") {
         return true
     }
     return false
 }
 
-function validarDescricao(texto){
-    if(texto.value.replace(/ /g,"").length !== 0){
+function validarDescricao(texto) {
+    if (texto.value.replace(/ /g, "").length !== 0) {
         return true
     }
     return false
-} 
+
+}
+
+
+
