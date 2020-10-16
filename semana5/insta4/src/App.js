@@ -42,17 +42,17 @@ class App extends React.Component {
       {
         nomeUsuario: 'paulinha',
         fotoUsuario: 'https://picsum.photos/id/1004/50/50',
-        fotoPost: 'https://picsum.photos/id/1011/200/150'
+        fotoPost: 'https://picsum.photos/id/1011/300/300'
       },
       {
         nomeUsuario: 'mejolaro',
         fotoUsuario: 'https://picsum.photos/id/1005/50/50',
-        fotoPost: 'https://picsum.photos/id/1/200/150'
+        fotoPost: 'https://picsum.photos/id/1/300/300'
       },
       {
         nomeUsuario: 'nayara',
         fotoUsuario: 'https://picsum.photos/id/1006/50/50',
-        fotoPost: 'https://picsum.photos/id/1008/200/150'
+        fotoPost: 'https://picsum.photos/id/1008/300/300'
       },
     ],
     valorInputNomeUsuario: "",
@@ -65,7 +65,7 @@ class App extends React.Component {
     const novoPost = {
       nomeUsuario: this.state.valorInputNomeUsuario,
       fotoUsuario: this.state.valorInputFotoUsuario,
-      fotoPost: this.state.valorInputFotoPost
+      fotoPost: this.state.valorInputFotoPost,
     };
 
     if (novoPost.nomeUsuario === '' || novoPost.fotoUsuario === '' || novoPost.fotoPost === '') {
