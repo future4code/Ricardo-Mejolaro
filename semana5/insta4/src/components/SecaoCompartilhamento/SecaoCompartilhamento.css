@@ -1,0 +1,6 @@
+.toshare-container {
+    display: flex;
+    justify-content: space-around;
+    padding: 5px;
+    border-top: 2px solid #111;
+}
