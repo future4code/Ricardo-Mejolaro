@@ -35,7 +35,7 @@ const UserPhoto = styled.img`
 `
 const PostPhoto = styled.img`
   width: 300px;
-  height: 200px;
+  height: 300px;
   object-fit: cover;
 `
 const PostFooter = styled.div`
