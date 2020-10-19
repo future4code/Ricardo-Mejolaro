@@ -9,7 +9,6 @@ import { PageFinal } from './components/PageFinal/PageFinal';
 const ButtonContainer = styled.div`
   display: flex;
 `
-
 const Button = styled.button`
   margin: 20px auto;
 `
