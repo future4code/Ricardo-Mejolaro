@@ -8,6 +8,12 @@ const Container = styled.div`
   justify-content: space-around;
 `
 
+const TaskContainer = styled.div`
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+`
+
 const TarefaList = styled.ul`
   padding: 0;
   width: 200px;
@@ -22,6 +28,9 @@ const InputsContainer = styled.div`
   display: grid;
   grid-auto-flow: column;
   gap: 10px;
+`
+
+const Button = styled.button`
 `
 
 class App extends React.Component {
@@ -76,6 +85,14 @@ class App extends React.Component {
     this.setState({tasks: newTaskList});
   }
 
+  deleteTask = (id) => {
+    const newTaskList = this.state.tasks.filter(task => {
+      return task.id !== id;
+  })
+
+    this.setState({tasks: newTaskList});
+  }
+
   onChangeFilter = (event) => {
     this.setState({filter: event.target.value})
   }
@@ -112,13 +129,15 @@ class App extends React.Component {
         <TarefaList>
           {filterList.map(task => {
             return (
+              <TaskContainer key={task.id}>
               <Tarefa
-                key={task.id}
                 complete={task.complete}
                 onClick={() => this.selectTask(task.id)}
               >
                 {task.text}
               </Tarefa>
+              <Button onClick={() => this.deleteTask(task.id)}>Apagar</Button>
+              </TaskContainer>
             )
           })}
         </TarefaList>
