@@ -9,8 +9,8 @@ const Container = styled.div`
 `
 
 const TaskContainer = styled.div`
-  display: flex;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: 200px 1fr;
   padding: 10px;
 `
 
@@ -30,7 +30,12 @@ const InputsContainer = styled.div`
   gap: 10px;
 `
 
+const ButtonContainer = styled.div`
+  display: flex;
+`
+
 const Button = styled.button`
+  margin-left: 10px;
 `
 
 class App extends React.Component {
@@ -89,8 +94,26 @@ class App extends React.Component {
     const newTaskList = this.state.tasks.filter(task => {
       return task.id !== id;
   })
+    this.setState({tasks: newTaskList});
+  }
+
+  updateTask = (id, value) => {
+    const newTaskList = this.state.tasks.map(task => {
+      if (task.id === id) {
+        const newTask = {
+          ...task,
+          text: value
+        }
+        return newTask
+      } else {
+        return task
+      } 
+    })
 
     this.setState({tasks: newTaskList});
+
+    /*Limpando input */
+    this.setState({inputValue: ""})
   }
 
   onChangeFilter = (event) => {
@@ -136,7 +159,10 @@ class App extends React.Component {
               >
                 {task.text}
               </Tarefa>
-              <Button onClick={() => this.deleteTask(task.id)}>Apagar</Button>
+              <ButtonContainer>
+                <Button onClick={() => this.updateTask(task.id, this.state.inputValue)}>Editar</Button>
+                <Button onClick={() => this.deleteTask(task.id)}>Apagar</Button>
+              </ButtonContainer>
               </TaskContainer>
             )
           })}
