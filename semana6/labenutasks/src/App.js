@@ -90,6 +90,7 @@ class App extends React.Component {
     this.setState({tasks: newTaskList});
   }
 
+  /* Desafio 1 */
   deleteTask = (id) => {
     const newTaskList = this.state.tasks.filter(task => {
       return task.id !== id;
@@ -97,6 +98,7 @@ class App extends React.Component {
     this.setState({tasks: newTaskList});
   }
 
+  /*Desafio 2 gambiarra */
   updateTask = (id, value) => {
     const newTaskList = this.state.tasks.map(task => {
       if (task.id === id) {
@@ -114,6 +116,16 @@ class App extends React.Component {
 
     /*Limpando input */
     this.setState({inputValue: ""})
+  }
+
+  /* Desafio 3 */
+
+  deleteAllTasks = () => {
+    const check = window.confirm("Tem certeza que deseja apagar todas as tarefas?")
+    if(check) {
+      this.setState({tasks: []});
+    }
+    return
   }
 
   onChangeFilter = (event) => {
@@ -138,6 +150,7 @@ class App extends React.Component {
         <InputsContainer>
           <input value={this.state.inputValue} onChange={this.onChangeInput} />
           <button onClick={this.createTask}>Adicionar</button>
+          <button onClick={this.deleteAllTasks}>Apagar todas</button>
         </InputsContainer>
         <br />
 
