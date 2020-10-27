@@ -7,18 +7,17 @@ import ViewUsers from './components/ViewUses/ViewUsers';
 const AppContainer = styled.div`
   width: 100vw;
   height: 100vh;
-  display: flex;
+  display: grid;
+  grid-template-rows: 70px 1fr;
 `
 
 const PageContainer = styled.div`
-  width: 60%;
   display: flex;
   justify-content: center;
-  margin-top: 70px;
+  margin: 10px auto;
 `
 
 export const Button = styled.button`
-  width: 30%;
   background-color: #111;
   color: #FFF;
   font-weight: bold;
@@ -29,7 +28,7 @@ export const Button = styled.button`
   border: none;
   cursor: pointer;
   outline: none;
-  align-self: flex-start;
+  justify-self: flex-start;
 
   &:hover {
     background-color: green;

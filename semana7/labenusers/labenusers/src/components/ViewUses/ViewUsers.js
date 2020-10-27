@@ -31,16 +31,20 @@ export default class ViewUsers extends Component {
   }
 
   deleteUser = (id) => {
-    axios.delete(`https://us-central1-labenu-apis.cloudfunctions.net/labenusers/users/${id}`, {
-      headers: {
-        Authorization: "ricardo-mejolaro-dumont"
-      }
-    }).then(res => {
-      alert('Usuário deletado com sucesso!')
-      this.handleAllUsers();
-    }).catch(error => {
-      alert(`Ops: ${error.message}`)
-    })
+    const check = window.confirm("Tem certeza que deseja apagar este usuário?")
+    if (check) {
+      axios.delete(`https://us-central1-labenu-apis.cloudfunctions.net/labenusers/users/${id}`, {
+        headers: {
+          Authorization: "ricardo-mejolaro-dumont"
+        }
+      }).then(res => {
+        alert('Usuário deletado com sucesso!')
+        this.handleAllUsers();
+      }).catch(error => {
+        alert(`Ops: ${error.message}`)
+      })
+    }
+    return
   }
 
   render() {
