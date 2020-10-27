@@ -20,6 +20,13 @@ export const ItemContainer = styled.div`
   padding: 5px 0;
   border-bottom: 2px solid #111;
 `
+export const Input = styled.input`
+  height: 25px;
+  border-radius: 10px;
+  outline: none;
+  color: #111;
+  background-color: #FFF;
+`
 export const Content = styled.p`
   font-size: 18px;
   font-weight: bold;
@@ -31,14 +38,12 @@ export const Content = styled.p`
   }
 `
 export const Button = styled.button`
-  width: 10%;
   background-color: #111;
   color: #FFF;
   font-weight: bold;
-  font-size: 18px;
-  margin-top: 20px;
+  font-size: 16px;
   padding: 10px;
-  border-radius: 50%;
+  border-radius: 5px;
   border: none;
   cursor: pointer;
   outline: none;

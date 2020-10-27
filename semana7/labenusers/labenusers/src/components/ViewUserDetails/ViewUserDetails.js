@@ -105,14 +105,14 @@ export default class ViewUserDetails extends Component {
               :
               <Input value={this.state.emailValue} onChange={this.onChangInputEmail}/>
             }            
-            <Button onClick={() => this.deleteUser(this.state.user.id)}>X</Button>
+            <Button onClick={() => this.deleteUser(this.state.user.id)}>APAGAR</Button>
             {this.state.viewContent ? 
               <Button onClick={() => this.clickUpdateUser(this.state.user.id)}>
-                Editar
+                EDITAR
               </Button>
               :
               <Button onClick={() => this.updateUser(this.state.user.id)}>
-                Salvar
+                SALVAR
               </Button>
             }
           </ItemContainer>

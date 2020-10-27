@@ -16,33 +16,36 @@ export const H2 = styled.h2`
 export const ItemContainer = styled.div`
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-evenly;
   width: 100%;
   padding: 5px 0;
+  background-color: #111;
 `
 export const Label = styled.label`
   font-size: 22px;
   font-weight: bold;
-  color: green;
+  color: #FFF;
 `
 
 export const Content = styled.p`
   font-size: 18px;
   font-weight: bold;
   margin-right: 5px;
+  color: #FFF;
 `
 export const Input = styled.input`
   height: 25px;
   border-radius: 10px;
   outline: none;
+  color: #111;
+  background-color: #FFF;
 `
 
 export const Button = styled.button`
-  width: 10%;
-  background-color: #111;
-  color: #FFF;
+  background-color: #FFF;
+  color: #111;
   font-weight: bold;
-  font-size: 18px;
+  font-size: 16px;
   padding: 10px;
   border-radius: 5px;
   border: none;
@@ -50,6 +53,7 @@ export const Button = styled.button`
   outline: none;
 
   &:hover {
-    background-color: red;
+    background-color: ${({ color }) => (color ? 'blue' : 'red')};
+    color: #FFF
   }
 `
