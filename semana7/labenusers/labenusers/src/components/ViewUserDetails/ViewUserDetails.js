@@ -5,33 +5,32 @@ import {
   UsersContainer,
   H2,
   ItemContainer,
+  Label,
   Content,
   Button
 } from './styles'
 
-export default class ViewUsers extends Component {
+export default class ViewUserDetails extends Component {
   state = {
-    users: [],
+    user: [],
+    id: this.props.id
   }
 
   componentDidMount() {
-    this.handleAllUsers();
+      this.handleUser()
   }
 
-  handleAllUsers = () => {
-    axios.get('https://us-central1-labenu-apis.cloudfunctions.net/labenusers/users', {
+  handleUser = () => {
+    axios.get(`https://us-central1-labenu-apis.cloudfunctions.net/labenusers/users/${this.state.id}`, {
       headers: {
         Authorization: "ricardo-mejolaro-dumont"
       }
     }).then(res => {
-      this.setState({users: res.data})
+      console.log(res.data)
+      this.setState({ user: res.data })
     }).catch(error => {
       alert(`Ops: ${error.message}`)
     })
-  }
-
-  handleUser = (id) => {
-    this.props.changePage(id)
   }
 
   deleteUser = (id) => {
@@ -43,7 +42,8 @@ export default class ViewUsers extends Component {
         }
       }).then(res => {
         alert('Usuário deletado com sucesso!')
-        this.handleAllUsers();
+        this.props.changePage()
+
       }).catch(error => {
         alert(`Ops: ${error.message}`)
       })
@@ -54,13 +54,16 @@ export default class ViewUsers extends Component {
   render() {
     return (
       <UsersContainer>
-        <H2>Usuários Cadastrados:</H2>
-        {this.state.users.map(user => {
-          return <ItemContainer key={user.id}>
-            <Content onClick={() => this.handleUser(user.id)}>{user.name}</Content>
-            <Button onClick={() => this.deleteUser(user.id)}>X</Button>
+        <H2>Dados do usuário: </H2>
+        {this.state.user.length > 0 ||
+          <ItemContainer key={this.state.user.id}>
+            <Label>Nome:</Label>
+            <Content>{this.state.user.name}</Content>
+            <Label>Email:</Label>
+            <Content>{this.state.user.email}</Content>
+            <Button onClick={() => this.deleteUser(this.state.user.id)}>X</Button>
           </ItemContainer>
-        })}
+        }
       </UsersContainer>
     )
   }

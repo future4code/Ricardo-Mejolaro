@@ -4,7 +4,8 @@ export const UsersContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 400px;
+  width: 700px;
+  height: 140px;
   padding: 10px;
   border: 2px solid #111;
   margin-top: 10px;
@@ -18,17 +19,17 @@ export const ItemContainer = styled.div`
   justify-content: space-between;
   width: 100%;
   padding: 5px 0;
-  border-bottom: 2px solid #111;
 `
+export const Label = styled.label`
+  font-size: 22px;
+  font-weight: bold;
+  color: green;
+`
+
 export const Content = styled.p`
   font-size: 18px;
   font-weight: bold;
   margin-right: 5px;
-  cursor: pointer;
-
-  &:hover {
-    color: green;
-  }
 `
 export const Button = styled.button`
   width: 10%;
@@ -36,7 +37,6 @@ export const Button = styled.button`
   color: #FFF;
   font-weight: bold;
   font-size: 18px;
-  margin-top: 20px;
   padding: 10px;
   border-radius: 50%;
   border: none;
