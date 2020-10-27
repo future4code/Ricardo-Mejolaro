@@ -7,13 +7,18 @@ import {
   ItemContainer,
   Label,
   Content,
+  Input,
   Button
 } from './styles'
 
 export default class ViewUserDetails extends Component {
   state = {
     user: [],
-    id: this.props.id
+    id: this.props.id,
+    nameValue: '',
+    emailValue: '',
+    viewContent: true,
+    viewInput: false
   }
 
   componentDidMount() {
@@ -51,6 +56,37 @@ export default class ViewUserDetails extends Component {
     return
   }
 
+  clickUpdateUser = () => {
+    this.setState({nameValue: this.state.user.name, emailValue: this.state.user.email})
+    this.setState({viewContent: !this.state.viewContent, viewInput: !this.state.viewInput})
+  }
+
+  updateUser = () => {
+    const body = {
+      name: String(this.state.nameValue),
+      email: String(this.state.emailValue)
+    }
+      axios.put(`https://us-central1-labenu-apis.cloudfunctions.net/labenusers/users/${this.state.id}`, body, {
+        headers: {
+          Authorization: "ricardo-mejolaro-dumont"
+        }
+      }).then(res => {
+        alert("Usuário alterado com sucesso!")
+        this.setState({viewContent: !this.state.viewContent, viewInput: !this.state.viewInput})
+        this.handleUser()
+        
+      }).catch(error => {
+        alert(`Ops: ${error.message}`)
+      })
+  }
+
+  onChangInputName = (e) => {
+    this.setState({ nameValue: e.target.value })
+  }
+  onChangInputEmail = (e) => {
+    this.setState({ emailValue: e.target.value })
+  }
+
   render() {
     return (
       <UsersContainer>
@@ -58,10 +94,27 @@ export default class ViewUserDetails extends Component {
         {this.state.user.length > 0 ||
           <ItemContainer key={this.state.user.id}>
             <Label>Nome:</Label>
-            <Content>{this.state.user.name}</Content>
+            {this.state.viewContent ? 
+              <Content>{this.state.user.name}</Content>
+              :
+              <Input value={this.state.nameValue} onChange={this.onChangInputName}/>
+            }   
             <Label>Email:</Label>
-            <Content>{this.state.user.email}</Content>
+            {this.state.viewContent ? 
+              <Content>{this.state.user.email}</Content>
+              :
+              <Input value={this.state.emailValue} onChange={this.onChangInputEmail}/>
+            }            
             <Button onClick={() => this.deleteUser(this.state.user.id)}>X</Button>
+            {this.state.viewContent ? 
+              <Button onClick={() => this.clickUpdateUser(this.state.user.id)}>
+                Editar
+              </Button>
+              :
+              <Button onClick={() => this.updateUser(this.state.user.id)}>
+                Salvar
+              </Button>
+            }
           </ItemContainer>
         }
       </UsersContainer>

@@ -31,6 +31,12 @@ export const Content = styled.p`
   font-weight: bold;
   margin-right: 5px;
 `
+export const Input = styled.input`
+  height: 25px;
+  border-radius: 10px;
+  outline: none;
+`
+
 export const Button = styled.button`
   width: 10%;
   background-color: #111;
@@ -38,7 +44,7 @@ export const Button = styled.button`
   font-weight: bold;
   font-size: 18px;
   padding: 10px;
-  border-radius: 50%;
+  border-radius: 5px;
   border: none;
   cursor: pointer;
   outline: none;
