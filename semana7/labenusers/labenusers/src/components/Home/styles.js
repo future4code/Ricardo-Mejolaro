@@ -5,10 +5,13 @@ export const FormRegister = styled.div`
   flex-direction: column;
   align-items: center;
   width: 300px;
-  height: 200px;
+  height: 280px;
   padding: 10px;
   border: 2px solid #111;
   margin-top: 70px;
+`
+export const H2 = styled.h2`
+  border-bottom: 2px solid #111;
 `
 export const ItemContainer = styled.div`
   display: flex;

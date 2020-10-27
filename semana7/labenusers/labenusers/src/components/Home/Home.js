@@ -3,6 +3,7 @@ import axios from 'axios';
 
 import {
   FormRegister,
+  H2,
   ItemContainer,
   Label,
   Input,
@@ -43,6 +44,7 @@ export default class Home extends Component {
   render() {
     return (
       <FormRegister>
+        <H2>Cadastrar:</H2>
         <ItemContainer>
           <Label>Nome: </Label>
           <Input placeholder={'Digite seu nome'} value={this.state.nameValue} onChange={this.onChangInputName} />
