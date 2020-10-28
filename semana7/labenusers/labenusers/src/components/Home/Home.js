@@ -6,7 +6,6 @@ import {
   FormRegister,
   H2,
   ItemContainer,
-  Label,
   Input,
   Button
 } from './styles'
@@ -54,9 +53,8 @@ export default class Home extends Component {
   render() {
     return (
       <FormRegister>
-        <H2>Cadastrar:</H2>
+        <H2>Preencha com seus dados:</H2>
         <ItemContainer>
-          <Label>Nome: </Label>
           <Input 
             placeholder={'Digite seu nome'} 
             value={this.state.nameValue} 
@@ -64,14 +62,13 @@ export default class Home extends Component {
           />
         </ItemContainer>
         <ItemContainer>
-          <Label>Email: </Label>
           <Input 
             placeholder={'Digite seu email'} 
             value={this.state.emailValue} 
             onChange={this.onChangInputEmail} 
           />
         </ItemContainer>
-        <Button onClick={this.createUser}>Salvar</Button>
+        <Button onClick={this.createUser}>Cadastrar</Button>
       </FormRegister>
     )
   }

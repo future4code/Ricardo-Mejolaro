@@ -4,7 +4,6 @@ import axios from 'axios';
 /*Tags Styleds*/
 import {
   UsersContainer,
-  H2,
   ItemContainer,
   Label,
   Content,
@@ -102,7 +101,6 @@ export default class ViewUserDetails extends Component {
   render() {
     return (
       <UsersContainer>
-        <H2>Dados do usuário: </H2>
         {this.state.user.length > 0 ||
           <ItemContainer key={this.state.user.id}>
             <Label>Nome:</Label>

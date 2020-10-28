@@ -6,27 +6,31 @@ export const AppContainer = styled.div`
   display: grid;
   grid-template-rows: 70px 1fr;
 `
-
 export const PageContainer = styled.div`
   display: flex;
   justify-content: center;
-  margin: 10px auto;
+  margin: 0 auto;
+  padding: 20px;
 `
-
+export const Section = styled.section`
+  
+`
 export const Button = styled.button`
-  background-color: #111;
+  background-color: #0A66C2;
   color: #FFF;
+  font-size: 18px;
   font-weight: bold;
-  margin-top: 20px;
+  margin-top: 5px;
   margin-left: 10px;
-  padding: 10px;
-  border-radius: 20px;
+  padding: 20px 20px 20px 60px;
+  border-radius: 100% 20px 20px 100%;
   border: none;
   cursor: pointer;
   outline: none;
   justify-self: flex-start;
+  align-self: flex-start;
 
   &:hover {
-    background-color: green;
+    background-color: #004182;
   }
 `
