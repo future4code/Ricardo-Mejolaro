@@ -1,9 +1,10 @@
+import React from 'react';
+
+import AppContainer from './components/AppContainer/AppContainer'; 
 
 function App() {
   return (
-    <div>
-      <p>Teste</p>
-    </div>
+    <AppContainer />
   );
 }
 
