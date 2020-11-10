@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 
 import ImgLeft from '../../img/astromatch-left.jpg';
 import ImgRight from '../../img/astromatch-right.jpg';
@@ -12,17 +12,35 @@ import {
 
 /*Componentes*/
 import HomeScreen from '../HomeScreen/HomeScreen';
-// import MatchScreen from '../MatchScreen/MatchScreen';
+import MatchScreen from '../MatchScreen/MatchScreen';
 
-function AppContainer() {
+function AppContainer(props) {
+  const [viewHomeScreen, setViewHomeScreen] = useState(true);
+  const [viewMatchScreen, setViewMatchScreen] = useState(false);
+
+  const handlePage = (page) => {
+    if (page === 'Home') {
+      setViewHomeScreen(true)
+      setViewMatchScreen(false)
+    } else {
+      setViewHomeScreen(false)
+      setViewMatchScreen(true)
+    }
+  }
+
   return (
     <Container>
       <BackImg imgUrl={ImgLeft}>
         <DimsImage />
       </BackImg>
 
-      <HomeScreen />
-      {/* <MatchScreen /> */}
+      {viewHomeScreen && 
+        <HomeScreen viewHomeScreen={handlePage} viewMatchScreen={handlePage}/>
+      }
+
+      {viewMatchScreen && 
+        <MatchScreen viewHomeScreen={handlePage} viewMatchScreen={handlePage}/>
+      }
 
       <BackImg imgUrl={ImgRight}>
         <DimsImage />

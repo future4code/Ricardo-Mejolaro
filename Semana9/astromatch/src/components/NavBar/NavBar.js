@@ -8,14 +8,23 @@ import {
 } from './styles';
 
 export default function NavBar(props) {
+
+  const handleHomeScreen = () => {
+    props.viewHomeScreen('Home')
+  }
+
+  const handleMatchScreen = () => {
+    props.viewMatchScreen('Match')
+  }
+
   return (
       <Nav>
         <IconsNavContainer>
-          <FaFire size={'1.5rem'} color={props.primaryColor} />
+          <FaFire size={'1.5rem'} color={props.primaryColor} onClick={handleHomeScreen} />
         </IconsNavContainer>
 
         <IconsNavContainer>
-          <FaHeart size={'1.5rem'} color={props.secondColor} />
+          <FaHeart size={'1.5rem'} color={props.secondColor} onClick={handleMatchScreen}/>
         </IconsNavContainer>
 
         <IconsNavContainer>

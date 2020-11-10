@@ -19,10 +19,10 @@ import {
 /*Components*/
 import NavBar from '../NavBar/NavBar';
 
-export default function HomeScreen() {
+export default function HomeScreen(props) {
   return (
     <CardContainer>
-      <NavBar primaryColor={'#fd5068'} secondColor={'#dadfe6'}/>
+      <NavBar primaryColor={'#fd5068'} secondColor={'#dadfe6'} viewHomeScreen={props.viewHomeScreen} viewMatchScreen={props.viewMatchScreen}/>
       <PhotoAndActionsContainer>
 
         <ImgContainer imgUrl={ImgBack}>

@@ -15,10 +15,10 @@ import {
 /*Components*/
 import NavBar from '../NavBar/NavBar';
 
-export default function MatchScreen() {
+export default function MatchScreen(props) {
   return (
     <CardContainer>
-      <NavBar primaryColor={'#dadfe6'} secondColor={'#fd5068'}/>
+      <NavBar primaryColor={'#dadfe6'} secondColor={'#fd5068'} viewMatchScreen={props.viewMatchScreen} viewHomeScreen={props.viewHomeScreen}/>
       <ItemsContainer>
         <ItemContainer>
           <Img src={ImgBack} />
