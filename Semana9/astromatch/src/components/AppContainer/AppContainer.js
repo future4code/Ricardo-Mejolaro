@@ -10,13 +10,13 @@ import {
 } from './styles';
 
 /*Componentes*/
-import Card from '../Card/Card';
+import HomeScreen from '../HomeScreen/HomeScreen';
 
 function AppContainer() {
   return (
     <Container>
       <BackImg imgUrl={ImgLeft}/>
-      <Card />
+      <HomeScreen />
       <BackImg imgUrl={ImgRight}/>
     </Container>
   );
