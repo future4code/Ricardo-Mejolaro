@@ -7,21 +7,10 @@ export const CardContainer = styled.div`
   margin: 32px auto 0 auto;
   border-radius: 10px;
   box-shadow: 0 2px 10px 0 rgba(136, 136, 136, 0.77);
-`
-export const Nav = styled.nav`
-  display: flex;
-  height: 50px;
-  width: 100%;
-  justify-content: space-around;
-  padding: 10px 0;
-  
-`
-export const IconsNavContainer = styled.div`
-  cursor: pointer;
-  transition: 400ms ease;
 
-  &:hover {
-      transform: scale(1.2);
+  @media(max-width: 400px) {
+    margin-top: 0;
+    height: 98vh;
   }
 `
 export const PhotoAndActionsContainer = styled.div`

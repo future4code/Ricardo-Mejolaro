@@ -6,18 +6,27 @@ import ImgRight from '../../img/astromatch-right.jpg';
 /*Tags Styleds*/
 import {
   Container,
-  BackImg
+  BackImg,
+  DimsImage
 } from './styles';
 
 /*Componentes*/
 import HomeScreen from '../HomeScreen/HomeScreen';
+// import MatchScreen from '../MatchScreen/MatchScreen';
 
 function AppContainer() {
   return (
     <Container>
-      <BackImg imgUrl={ImgLeft}/>
+      <BackImg imgUrl={ImgLeft}>
+        <DimsImage />
+      </BackImg>
+
       <HomeScreen />
-      <BackImg imgUrl={ImgRight}/>
+      {/* <MatchScreen /> */}
+
+      <BackImg imgUrl={ImgRight}>
+        <DimsImage />
+      </BackImg>
     </Container>
   );
 }

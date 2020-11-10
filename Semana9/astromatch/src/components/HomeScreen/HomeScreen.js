@@ -1,13 +1,11 @@
 import React from 'react';
-import { FaFire, FaComments, FaUser, FaTimes, FaStar, FaHeart, FaInfo } from 'react-icons/fa';
+import { FaTimes, FaStar, FaHeart, FaInfo } from 'react-icons/fa';
 
 import ImgBack from '../../img/ayo.jpg'
 
 /*Tags Styleds*/
 import {
   CardContainer,
-  Nav,
-  IconsNavContainer,
   PhotoAndActionsContainer,
   ImgContainer,
   TextContainer,
@@ -18,22 +16,13 @@ import {
   Action
 } from './styles';
 
-function Card() {
+/*Components*/
+import NavBar from '../NavBar/NavBar';
+
+export default function HomeScreen() {
   return (
     <CardContainer>
-      <Nav>
-        <IconsNavContainer>
-          <FaFire size={'1.5rem'} color={'#E4485E'} />
-        </IconsNavContainer>
-
-        <IconsNavContainer>
-          <FaComments size={'1.5rem'} color={'#dadfe6'} />
-        </IconsNavContainer>
-
-        <IconsNavContainer>
-          <FaUser size={'1.5rem'} color={'#dadfe6'} />
-        </IconsNavContainer>
-      </Nav>
+      <NavBar primaryColor={'#fd5068'} secondColor={'#dadfe6'}/>
       <PhotoAndActionsContainer>
 
         <ImgContainer imgUrl={ImgBack}>
@@ -45,7 +34,7 @@ function Card() {
               "Não há ninguém que ame a dor por si só, que a busque e queira tê-la, simplesmente por ser dor..."
             </Bio>
             <Info>
-              <FaInfo color={'#111'}/>
+              <FaInfo color={'#111'} />
             </Info>
           </TextContainer>
         </ImgContainer>
@@ -66,5 +55,3 @@ function Card() {
     </CardContainer>
   );
 }
-
-export default Card;
