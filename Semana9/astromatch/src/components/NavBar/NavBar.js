@@ -1,5 +1,8 @@
 import React from 'react';
-import { FaFire, FaTrashAlt, FaHeart } from 'react-icons/fa';
+
+/*Ícones*/
+import { FaTrashAlt, FaHeart } from 'react-icons/fa';
+import { SiTinder } from 'react-icons/si';
 
 /*Tags Styleds*/
 import {
@@ -17,19 +20,25 @@ export default function NavBar(props) {
     props.viewMatchScreen('Match')
   }
 
+  const clearMatches = () => {
+    props.clear()
+  }
+
   return (
-      <Nav>
-        <IconsNavContainer>
-          <FaFire size={'1.5rem'} color={props.primaryColor} onClick={handleHomeScreen} />
-        </IconsNavContainer>
+    <Nav>
+      <IconsNavContainer>
+        <SiTinder size={'1.5rem'} color={props.primaryColor} onClick={handleHomeScreen} />
+      </IconsNavContainer>
 
-        <IconsNavContainer>
-          <FaHeart size={'1.5rem'} color={props.secondColor} onClick={handleMatchScreen}/>
-        </IconsNavContainer>
+      <IconsNavContainer>
+        <FaHeart size={'1.5rem'} color={props.secondColor} onClick={handleMatchScreen} />
+      </IconsNavContainer>
 
+      {props.viewIcon &&
         <IconsNavContainer>
-          <FaTrashAlt size={'1.5rem'} color={'#fd5068'} />
+          <FaTrashAlt size={'1.5rem'} color={props.deleteColor} onClick={clearMatches} />
         </IconsNavContainer>
-      </Nav>
+      }
+    </Nav>
   );
 }

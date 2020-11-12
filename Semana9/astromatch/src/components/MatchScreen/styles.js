@@ -4,13 +4,13 @@ export const CardContainer = styled.div`
   max-width: 375px;
   height: 90vh;
   background-color: #f5f7fa;
-  margin: 32px auto 0 auto;
+  margin: 10px auto 5px auto;
   border-radius: 10px;
   box-shadow: 0 2px 10px 0 rgba(136, 136, 136, 0.77);
 
   @media(max-width: 400px) {
     margin-top: 0;
-    height: 98vh;
+    height: 100vh;
   }
 `
 export const Nav = styled.nav`
@@ -30,12 +30,13 @@ export const IconsNavContainer = styled.div`
   }
 `
 export const ItemsContainer = styled.div`
-  height: calc(95% - 50px);
+  min-height: calc(95% - 50px);
   min-width: 375px;
+  padding-bottom: 10px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: #E4485E;
+  background-color: #dadfe6;
 `
 export const ItemContainer = styled.div`
   width: 95%;
@@ -45,14 +46,16 @@ export const ItemContainer = styled.div`
   align-items: center;
   box-shadow: 0 2px 10px 0 rgba(136, 136, 136, 0.77);
   background-color: #FFFFFF;
-  margin-top: 5px;
+  margin: 5px;
   padding: 10px;
+  position: relative;
 
   div {
-    margin: 10px 10px 5px 190px;
+    position: absolute;
+    top: 35%;
+    right: 10px;
   }
 `
-
 export const Img = styled.img`
   width: 48px;
   height: 48px;
@@ -60,5 +63,12 @@ export const Img = styled.img`
 `
 export const Title = styled.h2`
   margin-left: 10px;
-  font-size: 1.4rem;
+  font-size: 1.3rem;
+`
+
+export const Loading = styled.img`
+  width: 100px;
+  height: 100px;
+  position: absolute;
+  top: 40%;
 `

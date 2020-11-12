@@ -4,33 +4,74 @@ export const CardContainer = styled.div`
   max-width: 375px;
   height: 90vh;
   background-color: #f5f7fa;
-  margin: 32px auto 0 auto;
+  margin: 10px auto 0 auto;
   border-radius: 10px;
-  box-shadow: 0 2px 10px 0 rgba(136, 136, 136, 0.77);
+  box-shadow: 10px 5px 10px 3px rgba(0, 0, 0, 0.7);
 
   @media(max-width: 400px) {
     margin-top: 0;
-    height: 98vh;
+    height: 100vh;
   }
 `
 export const PhotoAndActionsContainer = styled.div`
   height: calc(100% - 50px);
+  min-width: 375px;
   display: flex;
   flex-direction: column;
   align-items: center;
 `
 export const ImgContainer = styled.div`
-  width: 98%;
+  width: 96%;
   height: 85%;
-  background: url(${(props)=>props.imgUrl}) center center/cover;
+  background: url(${(props) => props.imgUrl}) center top/cover;
   border-radius: 10px;
   display: flex;
   align-items: flex-end;
   box-shadow: 0 2px 10px 0 rgba(136, 136, 136, 0.77);
+  opacity: 1;
+  position: relative;
+
+  span {
+    opacity: 0;
+    position: absolute;
+    top: 40px;
+    right: 40px;
+  }
+
+  ${(props) => props.decision !== true} {
+
+    span {
+      border-radius: 5px;
+      padding: 5px 10px;
+      border: 2px solid ${({ swipe }) => (swipe ? '#fd5068' : '#1be4a1')};
+      color: ${({ swipe }) => (swipe ? '#fd5068' : '#1be4a1')};
+      text-transform: uppercase;
+      font-size: 40px;
+      font-weight: bolder;
+      position: absolute;
+      top: 70px;
+      right: ${({ swipe }) => (swipe ? '180px' : '40px')};;
+      text-shadow: none;
+      opacity: 1;
+    }
+    
+    transform: ${({ swipe }) => (swipe ? 'rotate(-30deg) scale(0.8)' : 'rotate(30deg) scale(0.8)')};
+    transition: 0.6s;
+    margin-left: ${({ swipe }) => (swipe ? '-400px' : '400px')};
+    opacity: 0;
+    z-index: 10;
+  }
 `
+export const Loading = styled.img`
+  width: 100px;
+  height: 100px;
+  position: absolute;
+  top: 40%;
+`
+
 export const Info = styled.div`
-  width: 24px;
-  height: 24px;
+  width: 20px;
+  height: 20px;
   background-color: #FFF;
   border-radius: 50%;
   display: flex;
@@ -39,6 +80,7 @@ export const Info = styled.div`
 `
 
 export const TextContainer = styled.div`
+  min-width: 100%;
   color: #EEE;
   padding: 15px;
   background: rgb(2, 0, 36);
@@ -57,7 +99,7 @@ export const TextContainer = styled.div`
 
   ${Info} {
     position: absolute;
-    right: 10px;
+    right: 6px;
     bottom: 10px;
   }
 `
@@ -79,7 +121,7 @@ export const ActionsContainer = styled.div`
 `
 export const Action = styled.div`
   background: #FFFFFF;
-  box-shadow: 0 2px 6px 0 rgba(112, 125, 134, 0.14);
+  box-shadow: 0 2px 6px 0 rgba(136, 136, 136, 0.77);
   width: 60px;
   height: 60px;
   display: flex;

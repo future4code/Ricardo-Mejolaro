@@ -1,13 +1,9 @@
-import React, {useState} from 'react';
-
-import ImgLeft from '../../img/astromatch-left.jpg';
-import ImgRight from '../../img/astromatch-right.jpg';
+import React, { useState } from 'react';
 
 /*Tags Styleds*/
 import {
   Container,
-  BackImg,
-  DimsImage
+  H1
 } from './styles';
 
 /*Componentes*/
@@ -30,21 +26,21 @@ function AppContainer(props) {
 
   return (
     <Container>
-      <BackImg imgUrl={ImgLeft}>
-        <DimsImage />
-      </BackImg>
 
-      {viewHomeScreen && 
-        <HomeScreen viewHomeScreen={handlePage} viewMatchScreen={handlePage}/>
+      {viewHomeScreen &&
+        <div>
+          <H1>Astro<span>Match</span></H1>
+          <HomeScreen viewHomeScreen={handlePage} viewMatchScreen={handlePage} />
+        </div>
       }
 
-      {viewMatchScreen && 
-        <MatchScreen viewHomeScreen={handlePage} viewMatchScreen={handlePage}/>
-      }
+      {viewMatchScreen &&
+        <div>
+          <H1>Seus <span>Matches</span></H1>
+          <MatchScreen viewHomeScreen={handlePage} viewMatchScreen={handlePage} />
+        </div>
 
-      <BackImg imgUrl={ImgRight}>
-        <DimsImage />
-      </BackImg>
+      }
     </Container>
   );
 }
