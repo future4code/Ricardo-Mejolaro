@@ -1,29 +1,18 @@
-import { useState, useEffect } from 'react';
+/*Rotas*/
+import Routes from '../../routes/Routes';
 
-import Header from '../../Components/Header/Header'
+/*Imagens*/
+import BackgroundImg from '../../img/background-image.jpg';
+
+/*Tags styled*/
+import {
+  Container
+} from './styles';
 
 export default function AppContainer() {
-  const [blackHeader, setBlackHeader] = useState(false)
-
-  useEffect(() => {
-    const scrollListener = () => {
-      if(window.scrollY > 10) {
-        setBlackHeader(true);
-      } else {
-        setBlackHeader(false);
-      }
-    }
-
-    window.addEventListener('scroll', scrollListener);
-
-    return () => {
-      window.removeEventListener('scroll', scrollListener);
-    }
-  }, [])
-
   return (
-    <div>
-      <Header black={blackHeader}/>
-    </div>
+      <Container background={BackgroundImg}>
+        <Routes />
+      </Container>
   );
 }
