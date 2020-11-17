@@ -1,4 +1,5 @@
 import React from 'react';
+import {useHistory} from 'react-router-dom';
 
 import {
   HeaderContainer,
@@ -7,16 +8,22 @@ import {
 } from './styles';
 
 export default function Header({black}) {
+  const history = useHistory()
+
+  const goToHomePage = () => {
+    history.push('/')
+  }
+
   return (
     <HeaderContainer background={black}>
       <LogoContainer>
-        <Link href="/">LabeX</Link>
+        <Link onClick={goToHomePage}>LabeX</Link>
       </LogoContainer>
 
-        <Link href="/">Festança Marciana</Link>
-        <Link href="/">Multi luau em Jupiter</Link>
-        <Link href="/">Surfando em Netuno</Link>
-        <Link href="/">Picnic de Inverno em Plutão</Link>
+        <Link>Festança Marciana</Link>
+        <Link>Multi luau em Jupiter</Link>
+        <Link>Surfando em Netuno</Link>
+        <Link>Picnic de Inverno em Plutão</Link>
     </HeaderContainer>
   );
 }

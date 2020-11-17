@@ -15,10 +15,11 @@ export const HeaderContainer = styled.header`
 `
 export const LogoContainer = styled.div`
   width: 15%;
-  font-size: 24px;
+  font-size: 28px;
   font-weight: bold;
   letter-spacing: 5px;
   font-family: 'D-DIN';
+  cursor: pointer;
 `
 export const Link = styled.a`
   color: #FFF;
@@ -27,6 +28,7 @@ export const Link = styled.a`
   font-weight: bold;
   position: relative;
   margin-left: 25px;
+  cursor: pointer;
 
   &::after {
     content: "";

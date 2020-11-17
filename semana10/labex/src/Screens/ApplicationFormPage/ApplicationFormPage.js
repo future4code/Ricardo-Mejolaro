@@ -1,5 +1,5 @@
 
-export default function ApplicationFormPage () {
+export default function ApplicationFormPage() {
   return (
     <div>
       Application Form Page 
