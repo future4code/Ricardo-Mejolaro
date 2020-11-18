@@ -19,11 +19,6 @@ export default function Header({black}) {
       <LogoContainer>
         <Link onClick={goToHomePage}>LabeX</Link>
       </LogoContainer>
-
-        <Link>Festança Marciana</Link>
-        <Link>Multi luau em Jupiter</Link>
-        <Link>Surfando em Netuno</Link>
-        <Link>Picnic de Inverno em Plutão</Link>
     </HeaderContainer>
   );
 }

@@ -9,12 +9,12 @@ export const HeaderContainer = styled.header`
   height: 80px;
   display: flex;
   align-items: center;
+  justify-content: center;
   padding: 0 45px;
-  background: linear-gradient(to bottom, ${(props) => props.background ? '#141414' : ''} 90%, transparent 90%);
+  background: linear-gradient(to bottom, ${(props) => props.background ? '#000000' : ''} 90%, transparent 90%);
   transition: all ease 0.5s;
 `
 export const LogoContainer = styled.div`
-  width: 15%;
   font-size: 28px;
   font-weight: bold;
   letter-spacing: 5px;
