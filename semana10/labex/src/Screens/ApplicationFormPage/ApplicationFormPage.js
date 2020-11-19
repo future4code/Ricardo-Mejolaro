@@ -1,19 +1,24 @@
+import { useHistory } from 'react-router-dom';
 
 /*Tags styleds*/
 import {
-  LoginContainer,
+  ApplicationTripContainer,
   Title,
   SubTitle,
+  Form,
   Input,
   Select,
   Option,
-  TextArea,
   Button
 } from './styles';
 
 /*Hooks Customizados*/
 import useRequestData from '../../hooks/useRequestData';
 import useTrips from '../../hooks/useTrips';
+import { useForm } from '../../hooks/useForm';
+
+/*Services*/
+import applyToTrip from '../../services/ApplyToTrip';
 
 /*Constantes*/
 const countriesURL = 'https://restcountries.eu/rest/v2/all';
@@ -22,30 +27,98 @@ const baseURL = 'https://us-central1-labenu-apis.cloudfunctions.net/labeX/ricard
 export default function ApplicationFormPage() {
   const countries = useRequestData(countriesURL, []) || [];
   const trips = useTrips(`${baseURL}/trips`, []) || [];
+  const history = useHistory()
+
+  const { form, onChange } = useForm({ 
+    name: '',
+    age: '',
+    profession: '',
+    country: '',
+    tripId: '',
+    applicationText: ''
+  });
+
+  const handleApplicationTrip = (event) => {
+    event.preventDefault();
+    applyToTrip(form).then(() => {
+      history.push("/application-form")
+    }).catch((error) => {
+      console.log(error.message)
+    })
+  }
 
   return (
-    <LoginContainer>
+    <ApplicationTripContainer>
       <Title>Inscrever-se</Title>
       <SubTitle>Por favor, preencha com seus dados e escolha uma viagem:</SubTitle>
-      <Input type={'text'} placeholder={'Nome'} required/>
-      <Input type={'number'}placeholder={'Idade'} required min={'18'}/>
-      <Input type={'text'}placeholder={'Profissão'} required/>
-      <Select>
-        <Option value={''} hidden>País</Option>
-        {countries.map(country => {
-            return <Option key={country.name}>{country.name}</Option>
-          })
-        }
-      </Select>
-      <Select>
-        <Option value={''} hidden>Viagem</Option>
-        {trips.map(trip => {
-            return <Option key={trip.id}>{trip.name}</Option>
-          })
-        }
-      </Select>
-      <TextArea placeholder={'Por que você deve ser selecionado?'} rows="5" cols="33" maxLength={"200"} required />
-      <Button>Salvar</Button>
-    </LoginContainer>
+
+      <Form onSubmit={handleApplicationTrip}>
+        <Input 
+          type={'text'}
+          value={form.name}
+          name={'name'}
+          pattern={'^.{3,}$'}
+          onChange={onChange}
+          placeholder={'Nome'} 
+          required
+        />
+        <Input 
+          type={'number'}
+          value={form.age}
+          name={'age'}
+          onChange={onChange}
+          placeholder={'Idade'}
+          min={'18'} 
+          required 
+        />
+        <Input 
+          type={'text'}
+          value={form.profession}
+          name={'profession'}
+          onChange={onChange}
+          placeholder={'Profissão'} 
+          required 
+        />
+        
+        <Select onChange={onChange} value={form.country} name={'country'}>
+          <Option value={''} hidden>País</Option>
+          {countries.map(country => {
+            return <Option 
+                    key={country.name} 
+                    value={country.name}
+                    name={'country'}
+                    required 
+                  >
+                  {country.name}
+                  </Option>
+            })
+          }
+        </Select>
+        <Select onChange={onChange} value={form.tripId} name={'tripId'}>
+          <Option value={''} hidden>Viagem</Option>
+          {trips.map(trip => {
+            return <Option 
+                    key={trip.id}
+                    value={trip.id}
+                    name={'tripId'}
+                    required 
+                    >
+                    {trip.name}
+                    </Option>
+            })
+          }
+        </Select>
+        <Input 
+          value={form.applicationText}
+          name={'applicationText'}
+          pattern={'^.{30,}$'}
+          onChange={onChange}
+          placeholder={'Por que você? Mínimo 30 caracteres!'} 
+          required 
+        />
+        <Button>Inscrever-se</Button>
+      </Form>
+
+    </ApplicationTripContainer>
   );
 }

@@ -1,65 +1,67 @@
-import {useEffect} from 'react';
+import { useEffect } from 'react';
 import { useHistory } from 'react-router-dom';
-import axios from 'axios';
 
 /*Hooks*/
-import useInput from '../../hooks/useInput';
+import { useForm } from '../../hooks/useForm';
+
+/*Service*/
+import loginRequest from '../../services/LoginRequest';
 
 /*Tags styleds*/
 import {
   LoginContainer,
   Title,
   SubTitle,
+  Form,
   Input,
   Button
 } from './styles';
 
-/*Constantes*/
-const baseURL = "https://us-central1-labenu-apis.cloudfunctions.net/labeX/ricardo-mejolaro-dumont/login";
-
 export default function LoginPage() {
-  const [email, handleEmail] = useInput()
-  const [password, handlePassword] = useInput()
+  const { form, onChange } = useForm({ email: "", password: "" });
   const history = useHistory()
 
   useEffect(() => {
     const token = localStorage.getItem("token");
 
     if (token) {
-      history.push("/trips/list");
+      history.push("/trips/list")
     }
   }, [history])
 
-  const hadleLogin = () => {
-    if (email !== "" && password !== "") {
-      const body = {
-        email,
-        password
-      }
-      axios.post(baseURL, body)
-        .then((response) => {
-          localStorage.setItem('token', response.data.token)
-          history.push("/trips/list")
-        })
-        .catch(error => {
-          if (error.message.includes('401')) {
-            alert('Ops, usuário e/ou senha inválidos!')
-          } else {
-            console.log(error.message)
-          }
-        })
-    } else {
-      alert("Ops, preencha todos os dados corretamente!")
-    }
+  const handleLogin = (event) => {
+    event.preventDefault();
+
+    loginRequest(form.email, form.password).then(() => {
+      history.push("/trips/list")
+    }).catch((error) => {
+      console.log(error.message)
+    })
   }
 
   return (
     <LoginContainer>
       <Title>Login</Title>
       <SubTitle>Por favor, informe seu e-mail e senha:</SubTitle>
-      <Input type={'email'} value={email} placeholder={'EMAIL'} required onChange={handleEmail} />
-      <Input type={'password'} value={password} placeholder={'SENHA'} required onChange={handlePassword} />
-      <Button onClick={hadleLogin}>Login</Button>
+      <Form onSubmit={handleLogin}>
+        <Input 
+          type={'email'} 
+          value={form.email}
+          name={'email'}
+          placeholder={'EMAIL'} 
+          onChange={onChange}
+          required
+        />
+        <Input 
+          type={'password'} 
+          value={form.password}
+          name={'password'}
+          placeholder={'SENHA'}  
+          onChange={onChange}
+          required
+        />
+        <Button>Login</Button>
+      </Form>
     </LoginContainer>
   );
 }

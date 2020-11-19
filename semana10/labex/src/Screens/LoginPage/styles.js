@@ -22,6 +22,14 @@ export const SubTitle = styled.p`
   margin: 0;
   font-weight: 500;  
 `
+export const Form = styled.form`
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #000000;
+`
+
 export const Input = styled.input`
   width: 80%;
   height: 25px;

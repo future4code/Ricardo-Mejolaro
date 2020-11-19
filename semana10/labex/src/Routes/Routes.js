@@ -55,9 +55,13 @@ export default function Routes () {
           <Header black={blackHeader}/>
           <CreateTripPage />
         </Route>
-        <Route exact path={'/trip/details'}>
+        <Route exact path={'/trip/details/:id'}>
           <Header black={blackHeader}/>
           <TripDetailsPage />
+        </Route>
+        <Route>
+          <Header black={blackHeader}/>
+          <div>Página não encontrada!</div>
         </Route>
       </Switch>
     </BrowserRouter>

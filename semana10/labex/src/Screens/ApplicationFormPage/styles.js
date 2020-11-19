@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
-export const LoginContainer = styled.div`
-  width: 40%;
+export const ApplicationTripContainer = styled.div`
+  width: 70%;
   padding: 10px;
   border: 2px solid #FFF;
   margin: 120px;
@@ -10,6 +10,7 @@ export const LoginContainer = styled.div`
   flex-direction: column;
   align-items: center;
   background-color: #000000;
+  text-align: center;
 `
 export const Title = styled.h2`
   color: #FFF;
@@ -17,9 +18,17 @@ export const Title = styled.h2`
   margin-top: 0;  
 `
 export const SubTitle = styled.p`
+  max-width: 70%;
   color: #FFF;
   margin: 0;
   font-weight: 500;  
+`
+export const Form = styled.form`
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #000000;
 `
 export const Input = styled.input`
   width: 80%;
@@ -33,7 +42,7 @@ export const Input = styled.input`
   border-radius: 10px;
 `
 export const Select = styled.select`
-  width: 87%;
+  width: 84%;
   height: 40px;
   background-color: #FFF;
   color: #757575;
@@ -52,25 +61,8 @@ export const Option = styled.option`
   margin-top: 25px;
   border-radius: 10px;
 `
-
-export const TextArea = styled.textarea`
-  width: 80%;
-  background-color: #FFF;
-  color: #000000;
-  font-size: 18px;
-  font-weight: 700;
-  padding: 5px 15px;
-  margin-top: 25px;
-  border-radius: 10px;
-  resize: vertical;
-
-  &::placeholder {
-    font-size: 20px;
-    color: #757575;
-  }
-`
 export const Button = styled.button`
-  width: 87%;
+  width: 84%;
   height: 45px;
   border: 2px solid #FFF;
   background-color: transparent;
