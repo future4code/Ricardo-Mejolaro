@@ -38,8 +38,6 @@ export default function CreateTripPage() {
     }).catch((error) => {
       console.log(error.message)
     })
-
-
   }
 
   return (

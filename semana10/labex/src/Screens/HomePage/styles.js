@@ -12,6 +12,10 @@ export const HomeContainer = styled.div`
 `
 export const Title = styled.h1`
   color: #FFF;
+
+  @media(max-width: 400px) {
+    margin-top: 150px;
+  }
 `
 export const ButtonsContainer = styled.div`
   width: 70%;
@@ -19,6 +23,11 @@ export const ButtonsContainer = styled.div`
   align-items: center;
   justify-content: space-between;
   margin-top: 70px;
+
+  @media(max-width: 400px) {
+    flex-direction: column;
+    margin-top: 0;
+  }
 `
 export const Button = styled.button`
   width: 200px;
@@ -30,6 +39,12 @@ export const Button = styled.button`
   font-weight: bold; 
   transition: all 2s ease-in-out;
   cursor: pointer;
+
+  @media(max-width: 400px) {
+      margin-top: 70px;
+      background-color: #000000;
+      border: none;
+  }
 
   &:hover {
     color: #000000;

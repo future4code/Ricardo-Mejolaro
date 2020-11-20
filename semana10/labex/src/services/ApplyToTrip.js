@@ -13,8 +13,6 @@ export default function applyToTrip(form, event) {
     country: form.country
   }
 
-  console.log(id)
-
   return axios.post(`${baseURL}/${id}/apply`, body)
     .then(() => {
       alert('Inscrição efetuada com sucesso!')

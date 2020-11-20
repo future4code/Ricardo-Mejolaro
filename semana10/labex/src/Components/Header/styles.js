@@ -9,7 +9,7 @@ export const HeaderContainer = styled.header`
   height: 80px;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
   padding: 0 45px;
   background: linear-gradient(to bottom, ${(props) => props.background ? '#000000' : ''} 90%, transparent 90%);
   transition: all ease 0.5s;
@@ -18,13 +18,12 @@ export const LogoContainer = styled.div`
   font-size: 28px;
   font-weight: bold;
   letter-spacing: 5px;
-  font-family: 'D-DIN';
   cursor: pointer;
 `
 export const Link = styled.a`
   color: #FFF;
+  font-size: 28px;
   text-decoration: none;
-  font-family: 'D-DIN';
   font-weight: bold;
   position: relative;
   margin-left: 25px;

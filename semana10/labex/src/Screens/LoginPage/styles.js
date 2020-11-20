@@ -1,16 +1,18 @@
 import styled from 'styled-components';
 
 export const LoginContainer = styled.div`
-  width: 40%;
+  width: 60%;
   height: 330px;
   padding: 10px;
-  border: 2px solid #FFF;
   margin-top: 150px;
   border-radius: 10px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: #000000;
+
+  @media(max-width: 400px) {
+    width: 95%;
+  }
 `
 export const Title = styled.h2`
   color: #FFF;
@@ -27,7 +29,6 @@ export const Form = styled.form`
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: #000000;
 `
 
 export const Input = styled.input`
@@ -40,12 +41,15 @@ export const Input = styled.input`
   padding: 5px 15px;
   margin-top: 25px;
   border-radius: 10px;
+
+  @media(max-width: 400px) {
+    border: none;
+  }
 `
 export const Button = styled.button`
-  width: 87%;
+  width: 84%;
   height: 45px;
-  border: 2px solid #FFF;
-  background-color: transparent;
+  background-color: #000000;
   color: #FFF;
   font-size: 22px;
   font-weight: bold;
@@ -53,11 +57,17 @@ export const Button = styled.button`
   margin-top: 32px;
   border-radius: 10px;
   outline: none;
+  border: none;
   transition: all 2s ease-in-out;
   cursor: pointer;
 
   &:hover {
     color: #000000;
     background-color: #FFF;
+  }
+
+  @media(max-width: 400px) {
+    width: 90%;
+    border: none;
   }
 `

@@ -12,8 +12,6 @@ export default function createTrip(form, event) {
     durationInDays: Number(form.durationInDays)
   }
 
-  console.log(body)
-
   return axios.post(baseURL, body, {
     headers: {
       auth: localStorage.getItem('token')

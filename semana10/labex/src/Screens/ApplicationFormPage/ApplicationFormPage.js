@@ -1,4 +1,3 @@
-import { useHistory } from 'react-router-dom';
 
 /*Tags styleds*/
 import {
@@ -27,9 +26,8 @@ const baseURL = 'https://us-central1-labenu-apis.cloudfunctions.net/labeX/ricard
 export default function ApplicationFormPage() {
   const countries = useRequestData(countriesURL, []) || [];
   const trips = useTrips(`${baseURL}/trips`, []) || [];
-  const history = useHistory()
 
-  const { form, onChange } = useForm({ 
+  const { form, onChange } = useForm({
     name: '',
     age: '',
     profession: '',
@@ -41,7 +39,12 @@ export default function ApplicationFormPage() {
   const handleApplicationTrip = (event) => {
     event.preventDefault();
     applyToTrip(form).then(() => {
-      history.push("/application-form")
+      form.name = ''
+      form.age = ''
+      form.profession = ''
+      form.country = ''
+      form.tripId = ''
+      form.applicationText = ''
     }).catch((error) => {
       console.log(error.message)
     })
@@ -53,68 +56,69 @@ export default function ApplicationFormPage() {
       <SubTitle>Por favor, preencha com seus dados e escolha uma viagem:</SubTitle>
 
       <Form onSubmit={handleApplicationTrip}>
-        <Input 
+        <Input
           type={'text'}
           value={form.name}
           name={'name'}
           pattern={'^.{3,}$'}
           onChange={onChange}
-          placeholder={'Nome'} 
+          placeholder={'Nome'}
           required
         />
-        <Input 
+        <Input
           type={'number'}
           value={form.age}
           name={'age'}
           onChange={onChange}
           placeholder={'Idade'}
-          min={'18'} 
-          required 
+          min={'18'}
+          required
         />
-        <Input 
+        <Input
           type={'text'}
           value={form.profession}
           name={'profession'}
           onChange={onChange}
-          placeholder={'Profissão'} 
-          required 
+          placeholder={'Profissão'}
+          required
         />
-        
-        <Select onChange={onChange} value={form.country} name={'country'}>
+
+        <Select onChange={onChange} value={form.country || ''} name={'country'}>
           <Option value={''} hidden>País</Option>
           {countries.map(country => {
-            return <Option 
-                    key={country.name} 
-                    value={country.name}
-                    name={'country'}
-                    required 
-                  >
-                  {country.name}
-                  </Option>
-            })
+            return <Option
+              key={country.name}
+              value={country.name}
+              name={'country'}
+              required
+            >
+              {country.name}
+            </Option>
+          })
           }
         </Select>
-        <Select onChange={onChange} value={form.tripId} name={'tripId'}>
+        <Select onChange={onChange} value={form.tripId || ''} name={'tripId'}>
           <Option value={''} hidden>Viagem</Option>
-          {trips.map(trip => {
-            return <Option 
-                    key={trip.id}
-                    value={trip.id}
-                    name={'tripId'}
-                    required 
-                    >
-                    {trip.name}
-                    </Option>
-            })
+          {trips.length > 0 && 
+            trips.map(trip => {
+            return <Option
+              key={trip.id}
+              value={trip.id}
+              name={'tripId'}
+              required
+            >
+              {trip.name}
+            </Option>
+          })
           }
         </Select>
-        <Input 
+        <Input
           value={form.applicationText}
           name={'applicationText'}
           pattern={'^.{30,}$'}
           onChange={onChange}
-          placeholder={'Por que você? Mínimo 30 caracteres!'} 
-          required 
+          placeholder={'Por que você? Mínimo 30 caracteres!'}
+          required
         />
         <Button>Inscrever-se</Button>
       </Form>
