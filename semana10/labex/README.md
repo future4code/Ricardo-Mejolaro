@@ -1,70 +1,63 @@
-# Getting Started with Create React App
+### LabeX
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+### O que funciona
+- Fluxograma, Wireframe, base do projeto, rotas, layout login, controle de login, páginas privadas, criar viagens, inscrever-se em viagens.
 
-## Available Scripts
+### O que não funciona
+- Tela detalhe da viagem, para ver os detalhes ver os candidatos e aprovar ou não aprovar.
 
-In the project directory, you can run:
+### Link Surge 
+#### Link Exercícios 18/11/2020
+- http://ricardo-mejolaro-labex-v1-0.surge.sh/
 
-### `npm start`
+#### Link Exercícios 19/11
+- http://ricardo-mejolaro-labex-v1-1.surge.sh/
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+#### Link Projeto Final
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+- http://ricardo-mejolaro-labex.surge.sh/
 
-### `npm test`
+### Imagens
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- Fluxograma: 
 
-### `npm run build`
+[labenux-fluxograma.pdf](https://github.com/future4code/Ricardo-Mejolaro/files/5575303/labenux-fluxograma.pdf)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- Figma:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+https://www.figma.com/file/3FWED0DqM0SotRD1piA6Wf/Untitled?node-id=0%3A1
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
+## Gif's: 
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+#### Gif Exercícios 18/11
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+![20201118_145608](https://user-images.githubusercontent.com/56407810/99572944-2e259880-29b4-11eb-840f-d9f290e57cbd.gif)
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+#### Gif's Exercícios 19/11
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+![20201119_162426](https://user-images.githubusercontent.com/56407810/99716803-50d4b180-2a87-11eb-9090-760bfe3c9766.gif)
 
-## Learn More
+![20201119_163041](https://user-images.githubusercontent.com/56407810/99716832-5a5e1980-2a87-11eb-89f2-3c646f852a35.gif)
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+#### Gif's PROJETO FINAL:
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+- Login/Logout
 
-### Code Splitting
+![login-logout](https://user-images.githubusercontent.com/56407810/99836546-087bc900-2b45-11eb-8856-e8cc813497fe.gif)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+- Inscrição viagem
 
-### Analyzing the Bundle Size
+![inscricao-viagem](https://user-images.githubusercontent.com/56407810/99836569-116c9a80-2b45-11eb-9ec3-80295acf247b.gif)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+- Lista de viagens e detalhes de viagens
 
-### Making a Progressive Web App
+![lista-viagens-detalhes-viagem](https://user-images.githubusercontent.com/56407810/99836598-1cbfc600-2b45-11eb-83d5-22a3543c32cd.gif)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+- Criação de nova viagem
 
-### Advanced Configuration
+![criacao-viagem](https://user-images.githubusercontent.com/56407810/99836660-319c5980-2b45-11eb-9fb7-9bdcc145cd83.gif)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+- Tour pelo site com botões, detalhes das viagens, aprovação ou reprovação de candidatos das viagens.
 
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+![20201120_152358](https://user-images.githubusercontent.com/56407810/99836681-395bfe00-2b45-11eb-85ba-7d54f0572c2f.gif)
