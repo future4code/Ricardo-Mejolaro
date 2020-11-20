@@ -19,11 +19,13 @@ export default function HomePage() {
     history.push('/application-form')
   }
 
+  const token = localStorage.getItem('token')
+
   return (
     <HomeContainer>
       <Title>Bem vindos ao LabeX!</Title>
       <ButtonsContainer>
-        <Button onClick={goToLoginPage}>Fazer Login</Button>
+        <Button onClick={goToLoginPage}>{token === null ? 'Fazer Login' : 'Ver viagens'}</Button>
         <Button onClick={goToApplicationFormPage}>Candidatar-se a uma viagem</Button>
       </ButtonsContainer>
     </HomeContainer>

@@ -20,7 +20,6 @@ import {
 } from './styles';
 
 /*Imagens*/
-import backgroundImg from '../../img/trips-details-background.jpg';
 import Loading from '../../img/loading.gif';
 
 /*Icones*/
@@ -71,10 +70,10 @@ export default function TripDetailsPage() {
 
   useEffect(() => {
     getTripsDetails()
-  }, [candidates])
+  }, [])
 
   return (
-    <DetailsContainer imgUrl={backgroundImg}>
+    <DetailsContainer>
       <TripDetailsContainer>
         <Title>Detalhes da viagem:</Title>
 

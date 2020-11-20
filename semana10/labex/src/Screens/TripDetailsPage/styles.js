@@ -2,18 +2,19 @@ import styled from 'styled-components';
 
 export const DetailsContainer = styled.div`
   width: 100%;
-  height: 100vh;
   display: flex;
   align-items: center;
   justify-content: space-evenly;
+  margin-top: 80px;
 
   @media(max-width: 400px) {
+    margin-top: -150px;
     flex-direction: column;
     background-color: #000000;
   }
 `
 export const Title = styled.h1`
-  width: 100%;
+  max-width: 400px;
   font-size: 36px;
   color: #FFF;
   margin: 0;
@@ -43,7 +44,7 @@ export const ItemsContainer = styled.div`
   margin-bottom: 10px;
 `
 export const Label = styled.label`
-  color: #FFF;
+  color: #DAA520;
   font-size: 28px;
   font-weight: bold; 
   margin-right: 10px;
@@ -88,7 +89,7 @@ export const CandidatesContainer = styled.div`
   }
 `
 export const CandidateName = styled.span`
-  color: #FFF;
+  color: #DAA520;
   font-size: 18px;
   font-weight: bold;
   margin: 0;

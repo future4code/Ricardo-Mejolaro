@@ -60,6 +60,7 @@ export default function CreateTripPage() {
           value={form.description}
           name={'description'}
           pattern={'^.{30,}$'}
+          maxLength={'70'}
           onChange={onChange}
           placeholder={'Descrição, mínimo 30 caracteres'}
           required
@@ -79,7 +80,7 @@ export default function CreateTripPage() {
           name={'date'}
           onChange={onChange}
           placeholder={'Data da viagem'}
-          min={new Date().getFullYear() + '-' + String(new Date().getMonth() + 1).padStart(2, '0') + '-' + new Date().getDate()}
+          min={new Date().getFullYear() + '/' + String(new Date().getMonth() + 1).padStart(2, '0') + '/' + new Date().getDate()}
           required
         />
         <Select onChange={onChange} value={form.planet} name={'planet'}>
@@ -90,7 +91,7 @@ export default function CreateTripPage() {
           <Option value={'Júpiter'}>Júpiter</Option>
           <Option value={'Saturno'}>Saturno</Option>
           <Option value={'Urano'}>Urano</Option>
-          <Option value={'Netuno'}>Planeta</Option>
+          <Option value={'Netuno'}>Netuno</Option>
         </Select>
         <Button>Salvar</Button>
       </Form>

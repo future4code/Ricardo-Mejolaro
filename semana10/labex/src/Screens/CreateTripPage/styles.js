@@ -3,7 +3,7 @@ import styled from 'styled-components';
 export const CreateTripContainer = styled.div`
   width: 70%;
   padding: 10px;
-  margin-top: 110px;
+  margin-top: 80px;
   border-radius: 10px;
   display: flex;
   flex-direction: column;
@@ -46,6 +46,10 @@ export const Input = styled.input`
   padding: 5px 15px;
   margin-top: 25px;
   border-radius: 10px;
+
+  &:only-of-type(date){
+    color: #757575;
+  }
 
   @media(max-width: 400px) {
     width: 88%;

@@ -3,7 +3,7 @@ import styled from 'styled-components';
 export const ApplicationTripContainer = styled.div`
   width: 70%;
   padding: 10px;
-  margin-top: 50px;
+  margin-top: 65px;
   border-radius: 10px;
   display: flex;
   flex-direction: column;

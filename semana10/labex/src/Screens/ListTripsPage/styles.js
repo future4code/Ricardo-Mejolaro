@@ -3,7 +3,7 @@ import styled from 'styled-components';
 export const CardContainer = styled.div`
   width: 40%;
   padding: 10px;
-  margin-top: 120px;
+  margin-top: 70px;
   border-radius: 10px;
   display: flex;
   flex-direction: column;
@@ -11,6 +11,7 @@ export const CardContainer = styled.div`
 
   @media(max-width: 400px) {
     width: 90%;
+    margin-top: 150px;
   }
 `
 export const Title = styled.h2`
