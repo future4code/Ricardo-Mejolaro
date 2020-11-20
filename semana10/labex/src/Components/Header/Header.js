@@ -19,7 +19,6 @@ export default function Header({ black }) {
   }
 
   const goToBack = () => {
-    alert(url)
     const location = url
     if(location === 'http://ricardo-mejolaro-labex.surge.sh/login' || location === 'http://ricardo-mejolaro-labex.surge.sh/trips/list') {
       goToHomePage()
@@ -43,7 +42,7 @@ export default function Header({ black }) {
         {(token !== null && url !== "http://ricardo-mejolaro-labex.surge.sh/application-form" && url !== "http://ricardo-mejolaro-labex.surge.sh/login") &&
           <Link onClick={hadleLogout}>Logout</Link>
         }
-        {url === "http://ricardo-mejolaro-labex.surge.sh/" || url === "http://ricardo-mejolaro-labex.surge.sh/trips/list" ?
+        {url === "http://ricardo-mejolaro-labex.surge.sh/" ?
           <div></div>
           :
           <Link onClick={goToBack}>Voltar</Link>

@@ -1,3 +1,4 @@
+import { useHistory } from 'react-router-dom';
 
 /*Tags styleds*/
 import {
@@ -26,6 +27,7 @@ const baseURL = 'https://us-central1-labenu-apis.cloudfunctions.net/labeX/ricard
 export default function ApplicationFormPage() {
   const countries = useRequestData(countriesURL, []) || [];
   const trips = useTrips(`${baseURL}/trips`, []) || [];
+  const history = useHistory();
 
   const { form, onChange } = useForm({
     name: '',
@@ -39,16 +41,12 @@ export default function ApplicationFormPage() {
   const handleApplicationTrip = (event) => {
     event.preventDefault();
     applyToTrip(form).then(() => {
-      form.name = ''
-      form.age = ''
-      form.profession = ''
-      form.country = ''
-      form.tripId = ''
-      form.applicationText = ''
+      history.push('/')
     }).catch((error) => {
       console.log(error.message)
     })
   }
+  
 
   return (
     <ApplicationTripContainer>
