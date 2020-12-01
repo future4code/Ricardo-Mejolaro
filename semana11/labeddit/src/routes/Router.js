@@ -13,13 +13,13 @@ export default function Router() {
             <Route exact path={'/'}>
                 <FeedPage />
             </Route>
-            <Route exact path={'/entrar'}>
+            <Route exact path={'/login'}>
                 <LoginPage />
             </Route>
-            <Route exact path={'/cadastrar-se'}>
+            <Route exact path={'/signup'}>
                 <SignupPage />
             </Route>
-            <Route exact path={'/postagem/:id'}>
+            <Route exact path={'/post/:id'}>
                 <PostPage />
             </Route>
             <Route>

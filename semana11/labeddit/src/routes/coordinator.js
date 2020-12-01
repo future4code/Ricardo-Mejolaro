@@ -1,9 +1,9 @@
 export const goToLogin = (history) => {
-  history.push('/entrar')
+  history.push('/login')
 }
 
 export const goToSignUp = (history) => {
-  history.push('/cadastrar-se')
+  history.push('/signup')
 }
 
 export const goToFeed = (history) => {
@@ -11,5 +11,5 @@ export const goToFeed = (history) => {
 }
 
 export const goToPostDetails = (history, id) => {
-  history.push(`/postagem/${id}`)
+  history.push(`/post/${id}`)
 }

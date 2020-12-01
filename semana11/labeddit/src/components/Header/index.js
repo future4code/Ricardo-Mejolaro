@@ -1,4 +1,13 @@
-import { Route } from 'react-router-dom';
+import { Route, useHistory } from 'react-router-dom';
+
+/*Coordenador de rotas */
+import { goToLogin, goToSignUp, goToFeed } from "../../routes/coordinator";
+
+/*Imagens*/
+import logo from '../../assets/img/logo.png';
+
+/*Icones*/
+import { FaSearch, FaUserAlt, FaUserCheck } from 'react-icons/fa';
 
 /*Tags styleds*/
 import {
@@ -11,19 +20,30 @@ import {
   SignupButton
 } from './styles';
 
-/*Icones*/
-import { FaSearch, FaUserAlt, FaUserCheck } from 'react-icons/fa';
-
 export default function Header() {
+  const history = useHistory()
+
+  const logout = () => {
+    localStorage.removeItem("token");
+    goToLogin(history);
+  }
+
   return (
     <HeaderContainer>
-      <Logo>Lab<span>Eddit</span>.</Logo>
+      <Route exact path={['/', '/post/:id']}>
+        <Logo src={logo} onClick={() => goToFeed(history)}/>
+      </Route>
 
-      <Route exact path={['/entrar', '/cadastrar-se']}>
+      <Route exact path={['/login', '/signup']}>
+        <Logo src={logo} />
+      </Route>
+
+
+      <Route exact path={['/login', '/signup']}>
         <div></div>
       </Route>
 
-      <Route exact path={['/', '/postagem/:id']}>
+      <Route exact path={['/', '/post/:id']}>
         <SearchContainer>
           <FaSearch size={"16px"} color={"#878A8C"} />
           <SearchInput placeholder={'Search'} />
@@ -31,14 +51,14 @@ export default function Header() {
       </Route>
 
       <ButtonsContainer>
-        <Route exact path={['/entrar', '/cadastrar-se']}>
-          <LoginLogoutButton>LOG IN</LoginLogoutButton>
-          <SignupButton>SIGN UP</SignupButton>
+        <Route exact path={['/login', '/signup']}>
+          <LoginLogoutButton onClick={() => goToLogin(history)}>LOG IN</LoginLogoutButton>
+          <SignupButton onClick={() => goToSignUp(history)}>SIGN UP</SignupButton>
           <FaUserAlt size={"18px"} color={"#878A8C"}/>
         </Route>
 
-        <Route exact path={['/', '/postagem/:id']}>
-          <LoginLogoutButton>LOG OUT</LoginLogoutButton>
+        <Route exact path={['/', '/post/:id']}>
+          <LoginLogoutButton onClick={logout}>LOG OUT</LoginLogoutButton>
           <FaUserCheck size={"18px"} color={"#878A8C"}/>
         </Route>
       </ButtonsContainer>

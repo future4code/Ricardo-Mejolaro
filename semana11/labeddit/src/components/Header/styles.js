@@ -8,18 +8,21 @@ export const HeaderContainer = styled.header`
   align-items: center;
   justify-content: space-between;
   background-color: #FFFFFF;
+
+  @media(max-width: 420px) {
+    height: 200px;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(3, 1fr);
+  }
 `
-export const Logo = styled.span`
-  color: #FF4500;
-  font-size: 2.5rem;
-  font-weight: bold;
+export const Logo = styled.img`
+  width: 90%;
   margin-left: 2rem;
   cursor: pointer;
 
-  span {
-    color: #1A1A1B;
-    font-size: 2.5rem;
-    font-weight: bold;
+  @media(max-width: 420px) {
+    width: 50%;
+    margin: 0.5rem auto;
   }
 `
 export const SearchContainer = styled.div`
@@ -40,6 +43,10 @@ export const SearchContainer = styled.div`
     border: 1px solid #0079D3;
     border-radius: 5px;
     background-color: #FFFFFF;
+  }
+
+  @media(max-width: 420px) {
+    width: 80%;
   }
 `
 export const SearchInput = styled.input`
@@ -75,6 +82,7 @@ export const LoginLogoutButton = styled.button`
   color: #0079D3;
   background-color: #FFFFFF;
   border-radius: 5px;
+  outline: none;
   cursor: pointer;
 `
 export const SignupButton = styled.button`
@@ -86,6 +94,7 @@ export const SignupButton = styled.button`
   color: #FFFFFF;
   background-color: #0079D3;
   border-radius: 5px;
+  outline: none;
   cursor: pointer;
 
   &:hover{
