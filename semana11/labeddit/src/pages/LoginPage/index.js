@@ -1,7 +1,6 @@
 import { useHistory } from 'react-router-dom';
 
 /*Hooks*/
-import useProtectedPage from '../../hooks/useProtectedPage';
 import { useForm } from "../../hooks/useForm";
 
 /*Coordenador de rotas */
@@ -23,8 +22,6 @@ import {
 
 
 export default function LoginPage() {
-  useProtectedPage()
-
   const history = useHistory()
   const { form, onChange } = useForm({ email: "", password: "" })
 
@@ -58,7 +55,7 @@ export default function LoginPage() {
         />
         <Button
           variant="contained"
-          color="secondary"
+          color="primary"
           type="submit"
           size={'large'}
         >

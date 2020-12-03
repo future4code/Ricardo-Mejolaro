@@ -1,3 +1,8 @@
+import React, { useEffect, useContext } from 'react';
+
+/*Contexts*/
+import GlobalStateContext from "../../global/GlobalStateContext";
+
 /*Hooks*/
 import useProtectedPage from '../../hooks/useProtectedPage';
 import { useForm } from "../../hooks/useForm";
@@ -11,10 +16,14 @@ import IconImg from '../../assets/img/icon-img.png';
 /*Itens Material UI*/
 import { TextField, Button } from '@material-ui/core';
 
+/*Components*/
+import PostCard from '../../components/PostCard';
+
 /*Tags styleds*/
 import {
   FeedContainer,
-  PostContainer,
+  CreatePostContainer,
+  Title,
   FieldContainer,
   Img,
   ButtonContainer
@@ -22,7 +31,16 @@ import {
 
 export default function FeedPage() {
   useProtectedPage()
+  const { states, setters, requests } = useContext(GlobalStateContext);
 
+  /*Requisição de posts*/
+  useEffect(() => {
+    requests.getAllPosts()
+  }, [states, setters, requests]);
+
+  const posts = states.allPosts || []
+
+  /*Criação de post*/
   const { form, onChange, resetForm } = useForm({ text: "", title: "" })
 
   const handlePost = (event) => {
@@ -33,7 +51,8 @@ export default function FeedPage() {
 
   return (
     <FeedContainer>
-      <PostContainer onSubmit={handlePost}>
+      <CreatePostContainer onSubmit={handlePost}>
+        <Title>Create a post</Title>
         <FieldContainer>
           <Img src={IconImg} />
           <TextField
@@ -61,14 +80,30 @@ export default function FeedPage() {
         <ButtonContainer>
           <Button
             variant="contained"
-            color="secondary"
+            color="primary"
             type="submit"
             size='large'
           >
             Post
         </Button>
         </ButtonContainer>
-      </PostContainer>
+      </CreatePostContainer>
+      {posts.length > 0 && posts.map(post => {
+        return (
+          <PostCard
+            key={post.id}
+            id={post.id}
+            username={post.username}
+            votesCount={post.votesCount}
+            title={post.title}
+            commentsCount={post.commentsCount}
+            text={post.text}
+            userVoteDirection={post.userVoteDirection}
+            updated={requests}
+          />
+        )
+      })}
+
     </FeedContainer>
   );
 }

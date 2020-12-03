@@ -1,5 +1,5 @@
 import { createMuiTheme } from '@material-ui/core/styles'
-import { whiteColor, grayColor, blueDarkColor } from './colors'
+import { whiteColor, blueDarkColor } from './colors'
 
 const theme = createMuiTheme({
     palette: {
@@ -7,10 +7,6 @@ const theme = createMuiTheme({
             main: blueDarkColor,
             contrastText: whiteColor
         },
-        secondary: {
-            main: blueDarkColor,
-            contrastText: whiteColor
-        }
     }
 })
 

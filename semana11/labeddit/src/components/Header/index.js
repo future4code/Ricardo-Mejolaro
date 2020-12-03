@@ -59,7 +59,7 @@ export default function Header() {
 
         <Route exact path={['/', '/post/:id']}>
           <LoginLogoutButton onClick={logout}>LOG OUT</LoginLogoutButton>
-          <FaUserCheck size={"18px"} color={"#878A8C"}/>
+          <FaUserCheck size={"18px"} color={"#0079D3"}/>
         </Route>
       </ButtonsContainer>
     </HeaderContainer>

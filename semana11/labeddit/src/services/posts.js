@@ -13,3 +13,14 @@ export const createPost = (body) => {
     console.log(error.message)
   })
 }
+export const votePost = (body, id, update) => {
+  api.put(`/posts/${id}/vote`, body, {
+    headers: {
+      Authorization: localStorage.getItem('token')
+    }
+  }).then(() => {
+    update.getAllPosts()
+  }).catch(error => {
+    console.log(error.message)
+  })
+}
