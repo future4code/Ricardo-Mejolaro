@@ -18,16 +18,19 @@ import { TextField, Button } from '@material-ui/core';
 
 /*Components*/
 import PostCard from '../../components/PostCard';
+import PostCardSkeleton from '../../components/PostCardSkeleton';
 
 /*Tags styleds*/
+import { CreatePostContainer } from './styles';
+
 import {
   FeedContainer,
-  CreatePostContainer,
   Title,
   FieldContainer,
   Img,
-  ButtonContainer
-} from './styles';
+  ButtonContainer,
+  TitlesDetailsPage
+} from '../styles/commonStyles';
 
 export default function FeedPage() {
   useProtectedPage()
@@ -45,7 +48,7 @@ export default function FeedPage() {
 
   const handlePost = (event) => {
     event.preventDefault()
-    createPost(form)
+    createPost(form, requests)
     resetForm()
   }
 
@@ -88,22 +91,32 @@ export default function FeedPage() {
         </Button>
         </ButtonContainer>
       </CreatePostContainer>
-      {posts.length > 0 && posts.map(post => {
-        return (
-          <PostCard
-            key={post.id}
-            id={post.id}
-            username={post.username}
-            votesCount={post.votesCount}
-            title={post.title}
-            commentsCount={post.commentsCount}
-            text={post.text}
-            userVoteDirection={post.userVoteDirection}
-            updated={requests}
-          />
+      {posts.length === 0 ? (
+        <div>
+          <TitlesDetailsPage>Posts</TitlesDetailsPage>
+          <PostCardSkeleton />
+        </div>
+      ) : (
+          <div>
+            <TitlesDetailsPage>Posts</TitlesDetailsPage>
+            {posts.map(post => {
+              return (
+                <PostCard
+                  key={post.id}
+                  id={post.id}
+                  username={post.username}
+                  votesCount={post.votesCount}
+                  title={post.title}
+                  commentsCount={post.commentsCount}
+                  text={post.text}
+                  userVoteDirection={post.userVoteDirection}
+                  updated={requests}
+                />
+              )
+            })}
+          </div>
         )
-      })}
-
+      }
     </FeedContainer>
   );
 }

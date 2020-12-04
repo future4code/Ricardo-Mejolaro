@@ -12,15 +12,15 @@ import IconImg from '../../assets/img/icon-img.png';
 /*Icones*/
 import { ImArrowUp, ImArrowDown } from 'react-icons/im';
 import { FaCommentAlt } from 'react-icons/fa';
-import { RiShareForwardFill } from 'react-icons/ri';
 
 /*Tags styleds*/
+import { ContantContainer } from './styles';
+
 import {
   PostContainer,
   VotesContainer,
   ArrowContainer,
   VotesCount,
-  ContantContainer,
   PostInfoContainer,
   Img,
   PostTitle,
@@ -29,20 +29,19 @@ import {
   PostText,
   PostActionsContainer,
   CommentsContainer,
-  ShareContainer,
   CommentsCount,
   ActionsText,
-} from './styles';
+} from '../styles/commonStyles';
 
 export default function PostCard(props) {
   const {
-    userVoteDirection, 
-    id, 
-    username, 
-    votesCount, 
-    title, 
-    commentsCount, 
-    text, 
+    userVoteDirection,
+    id,
+    username,
+    votesCount,
+    title,
+    commentsCount,
+    text,
     updated
   } = props
 
@@ -60,7 +59,7 @@ export default function PostCard(props) {
       direction: direction
     }
 
-    votePost(body, id, updated)    
+    votePost(body, id, updated)
   }
 
   return (
@@ -75,10 +74,10 @@ export default function PostCard(props) {
 
         <ArrowContainer onClick={() => hadleVote(id, userVoteDirection, -1)}>
           <ImArrowDown size={'15'} color={userVoteDirection === -1 ? '#0079D3' : '#878A8C'} />
-        </ArrowContainer>       
+        </ArrowContainer>
       </VotesContainer>
 
-      <ContantContainer onClick={() => {goToPostDetails(history, id)}}>
+      <ContantContainer onClick={() => { goToPostDetails(history, id) }}>
 
         <PostInfoContainer>
           <Img src={IconImg} />
@@ -87,23 +86,19 @@ export default function PostCard(props) {
         </PostInfoContainer>
 
         <PostTextContainer>
-          <PostText>{text}</PostText>
+          <PostText>{text.substr(0, 150)}{text.length > 150 ? '...' : ''}</PostText>
         </PostTextContainer>
 
         <PostActionsContainer>
           <CommentsContainer>
-            <FaCommentAlt size={'14'} color={'#878A8C'}/>
+            <FaCommentAlt size={'14'} color={'#878A8C'} />
             <CommentsCount>{commentsCount}</CommentsCount>
             <ActionsText>Comments</ActionsText>
           </CommentsContainer>
-
-          <ShareContainer>
-            <RiShareForwardFill size={'16'} color={'#878A8C'}></RiShareForwardFill>
-            <ActionsText>Share</ActionsText>
-          </ShareContainer>
         </PostActionsContainer>
 
       </ContantContainer>
+      
     </PostContainer>
   );
 }
