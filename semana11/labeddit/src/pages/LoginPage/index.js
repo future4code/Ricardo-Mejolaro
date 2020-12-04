@@ -2,6 +2,7 @@ import { useHistory } from 'react-router-dom';
 
 /*Hooks*/
 import { useForm } from "../../hooks/useForm";
+import useUnProtectedPage from "../../hooks/useUnProtectedPage";
 
 /*Coordenador de rotas */
 import { goToSignUp } from "../../routes/coordinator";
@@ -22,6 +23,7 @@ import {
 
 
 export default function LoginPage() {
+  useUnProtectedPage()
   const history = useHistory()
   const { form, onChange } = useForm({ email: "", password: "" })
 

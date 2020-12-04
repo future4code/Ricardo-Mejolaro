@@ -8,7 +8,7 @@ import IconImg from '../../assets/img/icon-img.png';
 
 /*Icones*/
 import { ImArrowUp, ImArrowDown } from 'react-icons/im';
-import { FaCommentAlt, FaFacebookSquare, FaTwitter } from 'react-icons/fa';
+import { FaCommentAlt, FaPencilAlt, FaFacebookSquare, FaTwitter } from 'react-icons/fa';
 import { RiShareForwardFill } from 'react-icons/ri';
 
 /*Tags styleds*/
@@ -114,7 +114,7 @@ export default function PostCardDetails(props) {
           </CommentsContainer>
 
           <CommentingContainer onClick={handleComments}>
-            <FaCommentAlt size={'14'} color={'#878A8C'} />
+            <FaPencilAlt size={'14'} color={'#878A8C'} />
             <ActionsText>Create a Comment</ActionsText>
           </CommentingContainer>
 
@@ -133,7 +133,6 @@ export default function PostCardDetails(props) {
                 <Link
                   target="_blank"
                   href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A3000%2Fpost%2F29MbTIwKRi1cwiaN83WT&amp;src=sdkpreparse"
-                  class="fb-xfbml-parse-ignore"
                 >
                   <FaFacebookSquare size={'20'} color={'#878A8C'}></FaFacebookSquare>
                 </Link>

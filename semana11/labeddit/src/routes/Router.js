@@ -10,7 +10,7 @@ import ErrorPage from '../pages/ErrorPage';
 export default function Router() {
     return (
         <Switch>
-            <Route exact path={'/'}>
+            <Route exact path={['/', '/feed']}>
                 <FeedPage />
             </Route>
             <Route exact path={'/login'}>

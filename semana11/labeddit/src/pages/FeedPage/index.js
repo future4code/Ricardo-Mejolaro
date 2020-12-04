@@ -34,7 +34,7 @@ import {
 
 export default function FeedPage() {
   useProtectedPage()
-  const { states, setters, requests } = useContext(GlobalStateContext);
+  const { states, setters, requests } = useContext(GlobalStateContext)
 
   /*Requisição de posts*/
   useEffect(() => {
@@ -98,22 +98,48 @@ export default function FeedPage() {
         </div>
       ) : (
           <div>
-            <TitlesDetailsPage>Posts</TitlesDetailsPage>
-            {posts.map(post => {
-              return (
-                <PostCard
-                  key={post.id}
-                  id={post.id}
-                  username={post.username}
-                  votesCount={post.votesCount}
-                  title={post.title}
-                  commentsCount={post.commentsCount}
-                  text={post.text}
-                  userVoteDirection={post.userVoteDirection}
-                  updated={requests}
-                />
+            <TitlesDetailsPage>{
+              states.filteredPosts.length > 0 ? 
+              `Search results: ${states.filteredPosts[0].text === 'Post not Found' ? 
+              '0' : 
+              states.filteredPosts.length}` : 
+              'Posts'}
+            </TitlesDetailsPage>
+            
+            {states.filteredPosts.length > 0 ? (
+              states.filteredPosts.map(post => {
+                return (
+                  <PostCard
+                    key={post.id}
+                    id={post.id}
+                    username={post.username}
+                    votesCount={post.votesCount}
+                    title={post.title}
+                    commentsCount={post.commentsCount}
+                    text={post.text}
+                    userVoteDirection={post.userVoteDirection}
+                    updated={requests}
+                  />
+                )
+              })
+            ) : (
+                posts.map(post => {
+                  return (
+                    <PostCard
+                      key={post.id}
+                      id={post.id}
+                      username={post.username}
+                      votesCount={post.votesCount}
+                      title={post.title}
+                      commentsCount={post.commentsCount}
+                      text={post.text}
+                      userVoteDirection={post.userVoteDirection}
+                      updated={requests}
+                    />
+                  )
+                })
               )
-            })}
+            }
           </div>
         )
       }

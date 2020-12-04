@@ -3,18 +3,19 @@ import { Route, useHistory } from 'react-router-dom';
 /*Coordenador de rotas */
 import { goToLogin, goToSignUp, goToFeed } from "../../routes/coordinator";
 
+/*Components*/
+import Search from '../Search';
+
 /*Imagens*/
 import logo from '../../assets/img/logo.png';
 
 /*Icones*/
-import { FaSearch, FaUserAlt, FaUserCheck } from 'react-icons/fa';
+import { FaUserAlt, FaUserCheck } from 'react-icons/fa';
 
 /*Tags styleds*/
 import {
   HeaderContainer,
   Logo,
-  SearchContainer,
-  SearchInput,
   ButtonsContainer,
   LoginLogoutButton,
   SignupButton
@@ -39,15 +40,12 @@ export default function Header() {
       </Route>
 
 
-      <Route exact path={['/login', '/signup']}>
+      <Route exact path={['/login', '/signup', '/post/:id']}>
         <div></div>
       </Route>
 
-      <Route exact path={['/', '/post/:id']}>
-        <SearchContainer>
-          <FaSearch size={"16px"} color={"#878A8C"} />
-          <SearchInput placeholder={'Search'} />
-        </SearchContainer>
+      <Route exact path={['/', '/feed']}>
+        <Search />
       </Route>
 
       <ButtonsContainer>

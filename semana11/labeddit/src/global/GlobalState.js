@@ -8,6 +8,7 @@ import GlobalStateContext from "./GlobalStateContext";
 
 const GlobalState = (props) => {
   const [allPosts, setAllPosts] = useState([]);
+  const [filteredPosts, setFilteredPosts] = useState([]);
 
   const getAllPosts = () => {
     api.get('/posts', {
@@ -23,8 +24,8 @@ const GlobalState = (props) => {
     })
   }
 
-  const states = { allPosts };
-  const setters = { setAllPosts };
+  const states = { allPosts, filteredPosts };
+  const setters = { setAllPosts, setFilteredPosts };
   const requests = { getAllPosts };
 
   const data = { states, setters, requests };
