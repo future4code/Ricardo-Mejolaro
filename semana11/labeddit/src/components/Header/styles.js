@@ -16,7 +16,7 @@ export const HeaderContainer = styled.header`
   }
 `
 export const Logo = styled.img`
-  width: 90%;
+  width: 80%;
   margin-left: 2rem;
   cursor: pointer;
 
