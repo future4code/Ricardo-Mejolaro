@@ -35,7 +35,7 @@ export default function CommentCard(props) {
     updated
   } = props
 
-  const hadlePostVote = (postId, commentId, userVote, vote) => {
+  const hadleCommentVote = (postId, commentId, userVote, vote) => {
     let direction = vote;
     if ((userVote === 1 && direction === 1) || (userVote === -1 && direction === -1)) {
       direction = 0
@@ -54,11 +54,11 @@ export default function CommentCard(props) {
     <CommentContainer>
 
       <VotesContainer>
-        <ArrowContainer onClick={() => hadlePostVote(postId, commentId, userVoteDirection, 1)}>
+        <ArrowContainer onClick={() => hadleCommentVote(postId, commentId, userVoteDirection, 1)}>
           <ImArrowUp size={'15'} color={userVoteDirection === 1 ? '#FF4500' : '#878A8C'} />
         </ArrowContainer>
 
-        <ArrowContainer onClick={() => hadlePostVote(postId, commentId, userVoteDirection, -1)}>
+        <ArrowContainer onClick={() => hadleCommentVote(postId, commentId, userVoteDirection, -1)}>
           <ImArrowDown size={'15'} color={userVoteDirection === -1 ? '#0079D3' : '#878A8C'} />
         </ArrowContainer>       
       </VotesContainer>

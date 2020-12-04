@@ -1,11 +1,13 @@
 /*Serviços*/
 import api from './api';
 
+const token = localStorage.getItem('token')
+
 export const createPost = (body, update) => {
 
   api.post('/posts', body, {
     headers: {
-      Authorization: localStorage.getItem('token')
+      Authorization: token
     }
   }).then(() => {
     update.getAllPosts()
@@ -17,11 +19,11 @@ export const createPost = (body, update) => {
 export const votePost = (body, id, update) => {
   api.put(`/posts/${id}/vote`, body, {
     headers: {
-      Authorization: localStorage.getItem('token')
+      Authorization: token
     }
   }).then(() => {
-    update.updatedDetails(id)
     update.getAllPosts()
+    update.updatedDetails(id)
     
   }).catch(error => {
     console.log(error.message)
@@ -32,7 +34,7 @@ export const createComment = (body, id, update) => {
 
   api.post(`/posts/${id}/comment`, body, {
     headers: {
-      Authorization: localStorage.getItem('token')
+      Authorization: token
     }
   }).then(() => {
     update.updatedDetails(id)
@@ -45,7 +47,7 @@ export const voteComment = (body, PostId, commentId, update) => {
 
   api.put(`/posts/${PostId}/comment/${commentId}/vote`, body, {
     headers: {
-      Authorization: localStorage.getItem('token')
+      Authorization: token
     }
   }).then(() => {
     update.updatedDetails(PostId)

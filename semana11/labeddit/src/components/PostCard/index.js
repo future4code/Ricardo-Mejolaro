@@ -48,18 +48,26 @@ export default function PostCard(props) {
   const history = useHistory()
 
   const hadleVote = (id, userVote, vote) => {
-    let direction = vote;
-    if ((userVote === 1 && direction === 1) || (userVote === -1 && direction === -1)) {
-      direction = 0
-    } else {
-      direction = vote
-    }
+    if (id !== 'Post not found') {
+      let direction = vote;
+      if ((userVote === 1 && direction === 1) || (userVote === -1 && direction === -1)) {
+        direction = 0
+      } else {
+        direction = vote
+      }
 
-    const body = {
-      direction: direction
-    }
+      const body = {
+        direction: direction
+      }
 
-    votePost(body, id, updated)
+      votePost(body, id, updated)
+    }
+  }
+
+  const handlePostDetails = () => {
+    if (id !== 'Post not found') {
+      goToPostDetails(history, id)
+    }
   }
 
   return (
@@ -77,7 +85,7 @@ export default function PostCard(props) {
         </ArrowContainer>
       </VotesContainer>
 
-      <ContantContainer onClick={() => { goToPostDetails(history, id) }}>
+      <ContantContainer onClick={handlePostDetails}>
 
         <PostInfoContainer>
           <Img src={IconImg} />
@@ -98,7 +106,7 @@ export default function PostCard(props) {
         </PostActionsContainer>
 
       </ContantContainer>
-      
+
     </PostContainer>
   );
 }
