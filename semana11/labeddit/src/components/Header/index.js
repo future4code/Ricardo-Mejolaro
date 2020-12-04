@@ -35,7 +35,7 @@ export default function Header() {
         <Logo src={logo} onClick={() => goToFeed(history)}/>
       </Route>
 
-      <Route exact path={['/login', '/signup']}>
+      <Route exact path={['/login', '/signup', '/feed']}>
         <Logo src={logo} />
       </Route>
 
@@ -55,7 +55,7 @@ export default function Header() {
           <FaUserAlt size={"18px"} color={"#878A8C"}/>
         </Route>
 
-        <Route exact path={['/', '/post/:id']}>
+        <Route exact path={['/', '/post/:id', '/feed']}>
           <LoginLogoutButton onClick={logout}>LOG OUT</LoginLogoutButton>
           <FaUserCheck size={"18px"} color={"#0079D3"}/>
         </Route>
