@@ -24,6 +24,7 @@ import {
 
 export default function LoginPage() {
   useUnProtectedPage()
+  document.title = 'LabEddit - Login'
   const history = useHistory()
   const { form, onChange } = useForm({ email: "", password: "" })
 

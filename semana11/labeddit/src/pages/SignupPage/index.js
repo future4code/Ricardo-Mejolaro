@@ -23,6 +23,7 @@ import {
 
 export default function SignupPage() {
   useUnProtectedPage()
+  document.title = 'LabEddit - Signup'
   const history = useHistory()
   const { form, onChange } = useForm({ username: "", email: "", password: "" })
 

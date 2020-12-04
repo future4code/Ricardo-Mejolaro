@@ -34,6 +34,8 @@ import {
 
 export default function PostsPage() {
   useProtectedPage()
+  document.title = 'LabEddit - Post'
+  
   const params = useParams()
   const id = params.id
   const [post, setPost] = useState({})

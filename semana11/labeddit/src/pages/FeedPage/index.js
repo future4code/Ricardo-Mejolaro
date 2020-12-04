@@ -34,6 +34,7 @@ import {
 
 export default function FeedPage() {
   useProtectedPage()
+  document.title = 'LabEddit - Feed Page'
   const { states, setters, requests } = useContext(GlobalStateContext)
 
   /*Requisição de posts*/
@@ -105,7 +106,7 @@ export default function FeedPage() {
               states.filteredPosts.length}` : 
               'Posts'}
             </TitlesDetailsPage>
-            
+
             {states.filteredPosts.length > 0 ? (
               states.filteredPosts.map(post => {
                 return (
