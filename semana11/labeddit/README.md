@@ -1,70 +1,56 @@
-# Getting Started with Create React App
+### LabEddit
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+### O que funciona
+- Todos os requisitos mínimos e todos os desafios funcionam.
 
-## Available Scripts
+### O que não funciona
+- Em meus testes tudo funcionou, apenas os erros do surge que não encontra a página ao atualizar e não renderiza a página de erro de rota, porém isso apenas no surge, como comentado em aula deve ser bug do surge.
 
-In the project directory, you can run:
+### Link Surge 
+- http://ricardo-mejolaro-labeddit.surge.sh/
 
-### `npm start`
+### Tecnologias utilizadas: 
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+- ReactJS
+- Axios
+- Styled Components
+- Material UI
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+### Imagens
 
-### `npm test`
+- Login
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+![Login](https://user-images.githubusercontent.com/56407810/101347291-9dcacd00-3868-11eb-8f68-b5ad885b8020.png)
 
-### `npm run build`
+- Signup
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+![Signup](https://user-images.githubusercontent.com/56407810/101347305-a4594480-3868-11eb-8e06-8ae11066b132.png)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- Posts
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+![Posts](https://user-images.githubusercontent.com/56407810/101347323-ac18e900-3868-11eb-95df-aec480d25a27.png)
 
-### `npm run eject`
+- Detalhes do Post com create a comment aberto
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+![PostDetails](https://user-images.githubusercontent.com/56407810/101347403-cce13e80-3868-11eb-8330-d6a0741708c1.png)
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- Search 1 resultado
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+![Search1](https://user-images.githubusercontent.com/56407810/101347506-f601cf00-3868-11eb-99fa-4320352c2edf.png)
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+- Search Sem reultados
 
-## Learn More
+![Search2](https://user-images.githubusercontent.com/56407810/101347525-fdc17380-3868-11eb-9ff4-a72380f5d816.png)
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+- Search mais de um resultado
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+![Search3](https://user-images.githubusercontent.com/56407810/101347543-04e88180-3869-11eb-8a0d-53d29e363d2c.png)
 
-### Code Splitting
+- Detalhes do post create a comment fechado e com a opção de compartilhamento do post
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+![Share](https://user-images.githubusercontent.com/56407810/101347570-0c0f8f80-3869-11eb-9898-eeaf50c7aba5.png)
 
-### Analyzing the Bundle Size
+- Skeleton loading
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+![Skeleton](https://user-images.githubusercontent.com/56407810/101347658-2b0e2180-3869-11eb-81e0-966bf614d18e.png)
 
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
