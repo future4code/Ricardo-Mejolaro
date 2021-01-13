@@ -354,7 +354,7 @@ const updateSalaryActor = async (
 
 ```
 
-app.post("/actor", async (req: Request, res: Response) => {
+app.put("/actor", async (req: Request, res: Response) => {
   try {
     const { id, salary } = req.body;
     await updateSalaryActor(id, salary);
