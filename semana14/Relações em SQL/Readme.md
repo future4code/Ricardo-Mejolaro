@@ -438,6 +438,76 @@ Deu erro de sintaxe no: m,title existe uma ',' ao invés de '.'
 
 ### R.6.A: 
 
-A relação ao meu ver é 1:N, poque um filme poder ganhar mais de 1 oscar.
+A relação ao meu ver é N:M, poque um filme poder ganhar mais de 1 oscar e o mesmo oscar pode ser dado a mais de um filme, desde que seja em anos diferentes.
+
+---
+
+## Questão B
+
+*b. Explicite a query que você usou para criar a tabela*
+
+---
+
+### R.6.B: 
+
+```
+
+CREATE TABLE Oscar_Movie (
+	id VARCHAR(255) PRIMARY KEY,
+	oscar_category VARCHAR(255) NOT NULL,
+  movie_id VARCHAR(255),
+  FOREIGN KEY (movie_id) REFERENCES Movies(id)
+);
+
+```
+
+---
+
+## Questão C
+
+*c. Crie ao menos 2 óscar para cada um dos filmes*
+
+---
+
+### R.6.C: 
+
+```
+
+INSERT INTO Oscar_Movie
+VALUES 
+("001", "Melhor Atriz", "2007-02-09", "001"),
+("002", "Melhor Ator", "2007-02-09", "001"),
+("003", "Melhor Atriz Coadjuvante", "2013-02-09", "002"),
+("004", "Melhor Roteiro Original", "2007-02-09", "002"),
+("005", "Melhor Roteiro Adaptado", "2018-02-09", "003"),
+("006", "Melhor Figurino", "2018-02-09", "003"),
+("007", "Melhor Filme", "2008-02-09", "010"),
+("008", "Melhor Direção", "2008-02-09", "010");
+
+```
+
+---
+
+## Questão D
+
+*d. Faça uma query que retorne todos os filmes e seus respectivos óscar*
+
+---
+
+### R.6.d: 
+
+```
+
+SELECT 
+	Movies.id as movie_id, 
+    Movies.title,
+    Movies.synopsis,
+    Movies.release_date,
+    Movies.playing_limit_date,
+    Oscar_Movie.oscar_category
+FROM Movies
+JOIN Oscar_Movie ON Oscar_Movie.movie_id = Movies.id;
+
+```
 
 ---
