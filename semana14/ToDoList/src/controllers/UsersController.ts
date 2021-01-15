@@ -68,6 +68,23 @@ const getAllUsers = async (): Promise<any> => {
   }
 };
 
+const searchUser = async (
+  search: string
+): Promise<any> => {
+  try {
+    const users = await db
+    .select('id', 'nickname')
+    .from('TodoListUser')
+    .where('nickname', 'LIKE', `%${search}%`)
+    .orWhere('email', 'LIKE', `%${search}%`);
+  
+    return users;
+    
+  } catch (error) {
+    console.log(error);
+  }
+};
+
 module.exports = {
   async createUser(req: Request, res: Response) {
     try {
@@ -150,6 +167,23 @@ module.exports = {
     } catch (error) {
       return res.status(400).send({
         message: error.message,
+      });
+    }
+  },
+  async searchUser(req: Request, res: Response) {
+    try {
+      const { search } = req.query;
+
+      if (search === "") {
+        return res.status(400).send({ message: "Informe um termo de busca para pesquisa de usuário!"});
+      }
+
+      const users = await searchUser(`${search}`);
+
+      return res.status(200).send({ users });
+    } catch (error) {
+      return res.status(400).send({
+        message: "Usuário não encontrado para o termo informado na busca!",
       });
     }
   },

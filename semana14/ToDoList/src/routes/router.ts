@@ -8,12 +8,13 @@ const TasksController = require('../controllers/TasksController');
 //Rotas usuários
 router.get("/user/:id", UsersController.getUserById);
 router.get("/users/all", UsersController.getAllUsers);
-router.put("/user", UsersController.createUser);
+router.get("/user-search", UsersController.searchUser);
+router.post("/user", UsersController.createUser);
 router.put("/user/edit/:id", UsersController.updateUser);
 
 //Rotas Tarefas
 router.get("/task/:id", TasksController.getTaskById);
 router.get("/task", TasksController.getTasksByUser);
-router.put("/task", TasksController.createTask);
+router.post("/task", TasksController.createTask);
 
 module.exports = router;
