@@ -1,6 +1,6 @@
 import { Request, Response } from 'express';
 
-const { formatStringDate } = require('../utils/utils');
+const { formatStringDate, date } = require('../utils/utils');
 
 //Configurações do banco
 import db from '../config/database';
@@ -118,13 +118,20 @@ module.exports = {
         return res.status(400).send({ message: "Informe um ID de usuário para pesquisa da tarefa"});
       }
 
-      const tasks = await getTasksByUser(`${creatorUserId}`);
+      const results = await getTasksByUser(`${creatorUserId}`);
 
-      if (tasks.length === 0) {
+      if (results.length === 0) {
         return res.status(400).send({ message: "Tarefa não encontrado para o usuário informado!"});
       }
 
-      return res.status(200).send( { tasks });;
+      const tasks = results.map((task: any) => {
+        return {
+          ...task, 
+          limit_date: date(Date.parse(task.limit_date)).format
+        }
+      }) 
+
+      return res.status(200).send( tasks );
     } catch (error) {
       return res.status(400).send({
         message: "Tarefa não encontrado para o usuário informado!",
