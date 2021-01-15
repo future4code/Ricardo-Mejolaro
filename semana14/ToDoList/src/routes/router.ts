@@ -6,13 +6,14 @@ const UsersController = require('../controllers/UsersController');
 const TasksController = require('../controllers/TasksController');
 
 //Rotas usuários
-router.put("/user", UsersController.createUser);
 router.get("/user/:id", UsersController.getUserById);
-router.put("/user/edit/:id", UsersController.updateUser);
 router.get("/users/all", UsersController.getAllUsers);
+router.put("/user", UsersController.createUser);
+router.put("/user/edit/:id", UsersController.updateUser);
 
 //Rotas Tarefas
-router.put("/task", TasksController.createTask);
 router.get("/task/:id", TasksController.getTaskById);
+router.get("/task", TasksController.getTasksByUser);
+router.put("/task", TasksController.createTask);
 
 module.exports = router;

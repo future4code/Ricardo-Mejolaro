@@ -43,6 +43,23 @@ const getTaskById = async (
   }
 };
 
+const getTasksByUser = async (
+  creator_user_id: string
+): Promise<any> => {
+  try {
+    const tasks = await db.raw(`
+      SELECT TodoListTask.id, TodoListTask.title, TodoListTask.description, TodoListTask.status, TodoListTask.limit_date, TodoListTask.creator_user_id, TodoListUser.name as creatorUserNickname
+      FROM TodoListTask
+      JOIN TodoListUser ON TodoListUser.id = ${creator_user_id};
+    `)
+      
+    return tasks[0];
+    
+  } catch (error) {
+    console.log(error);
+  }
+};
+
 module.exports = {
   async createTask(req: Request, res: Response) {
     try {
@@ -90,6 +107,27 @@ module.exports = {
     } catch (error) {
       return res.status(400).send({
         message: "Tarefa não encontrado para o ID informado!",
+      });
+    }
+  },
+  async getTasksByUser(req: Request, res: Response) {
+    try {
+      const { creatorUserId } = req.query;
+
+      if (creatorUserId === "") {
+        return res.status(400).send({ message: "Informe um ID de usuário para pesquisa da tarefa"});
+      }
+
+      const tasks = await getTasksByUser(`${creatorUserId}`);
+
+      if (tasks.length === 0) {
+        return res.status(400).send({ message: "Tarefa não encontrado para o usuário informado!"});
+      }
+
+      return res.status(200).send( { tasks });;
+    } catch (error) {
+      return res.status(400).send({
+        message: "Tarefa não encontrado para o usuário informado!",
       });
     }
   },
