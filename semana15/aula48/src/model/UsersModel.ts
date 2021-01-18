@@ -30,3 +30,12 @@ export async function orderUserByNameOrType(term: string):Promise<any> {
   .orderBy(term)
   return result
 }
+
+export async function selectAllUsersPaginate(limit: number, offset: number): Promise<any> {
+  const result = await db("aula48_exercicio")
+  .select('*')
+  .limit(limit)
+  .offset(offset)
+
+  return result
+}
